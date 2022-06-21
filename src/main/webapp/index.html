@@ -1,172 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Shop Homepage - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Petmily</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">후원</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">봉사</a></li>
-<!--                        입양임보-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">입양/임보</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">입양/임보</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">입양</a></li>
-                                <li><a class="dropdown-item" href="#!">임보</a></li>
-                            </ul>
-                        </li>
-<!--                        신고-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">신고</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">실종</a></li>
-                                <li><a class="dropdown-item" href="#!">보호</a></li>
-                            </ul>
-                        </li>
-<!--                        찾아요,봤어요-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">찾아요/봤어요</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">찾아요</a></li>
-                                <li><a class="dropdown-item" href="#!">봤어요</a></li>
-                            </ul>
-                        </li>
-<!--                        커뮤니티-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">커뮤니티</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">자유 게시판</a></li>
-                                <li><a class="dropdown-item" href="#!">문의 게시판</a></li>
-                                <li><a class="dropdown-item" href="#!">입양 후기 게시판</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-<!--                    <form class="d-flex">-->
-<!--                        <button class="btn btn-outline-dark" type="submit">-->
-<!--                            <i class="bi-cart-fill me-1"></i>-->
-<!--                            로그인-->
-<!--                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>-->
-<!--                        </button>-->
-<!--                    </form>-->
+<head>
+    <title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="petsitting-master/css/animate.css">
+
+    <link rel="stylesheet" href="petsitting-master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="petsitting-master/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="petsitting-master/css/magnific-popup.css">
+
+
+    <link rel="stylesheet" href="petsitting-master/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="petsitting-master/css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="petsitting-master/css/flaticon.css">
+    <link rel="stylesheet" href="petsitting-master/css/style.css">
+</head>
+<body>
+
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <p class="mb-0 phone pl-md-2">
+                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>
+                    <a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
+                </p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-md-end">
+                <div class="social-media">
+                    <p class="mb-0 d-flex">
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                    </p>
                 </div>
-                <div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><span class="flaticon-pawprint-1 mr-2"></span>Pet sitting</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <!--	        <ul class="navbar-nav ml-auto">-->
+            <!--	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>-->
+            <!--	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>-->
+            <!--	        	<li class="nav-item active"><a href="vet.html" class="nav-link">Veterinarian</a></li>-->
+            <!--	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>-->
+            <!--	          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>-->
+            <!--	          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>-->
+            <!--	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>-->
+            <!--	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>-->
+            <!--	        </ul>-->
+            <ul class="navbar-nav ml-auto">
+                <!--	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>-->
+                <li class="nav-item"><a href="view/about.html" class="nav-link">About</a></li>
+                <!--	        	<li class="nav-item active"><a href="vet.html" class="nav-link">Veterinarian</a></li>-->
+                <!--	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>-->
+                <!--	          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>-->
+                <li class="nav-item"><a href="view/pricing.html" class="nav-link">후원</a></li>
+                <li class="nav-item"><a href="view/blog.html" class="nav-link">찾아요/봤어요</a></li>
+                <li class="nav-item"><a href="view/contact.html" class="nav-link">신고</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Veterinarian <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-0 bread">Meet Our Veterinary Doctor</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Lloyd Wilson</h3>
+                        <span class="position mb-2">Health Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-2.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Rachel Parker</h3>
+                        <span class="position mb-2">Life &amp; Business Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-3.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Ian Smith</h3>
+                        <span class="position mb-2">Executive Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-4.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Alicia Henderson</h3>
+                        <span class="position mb-2">Health Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-5.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Lloyd Wilson</h3>
+                        <span class="position mb-2">Executive Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-6.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Rachel Parker</h3>
+                        <span class="position mb-2">Health Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-7.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Ian Smith</h3>
+                        <span class="position mb-2">Health Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url(images/staff-8.jpg);"></div>
+                    </div>
+                    <div class="text pt-3 px-3 pb-4 text-center">
+                        <h3>Fred Henderson</h3>
+                        <span class="position mb-2">Executive Coach</span>
+                        <div class="faded">
+                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+                            <ul class="ftco-social text-center">
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-google"></span></a></li>
+                                <li class="ftco-animate"><a href="#"
+                                                            class="d-flex align-items-center justify-content-center"><span
+                                        class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Petsitting</h2>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <ul class="ftco-footer-social p-0">
+                    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top"
+                                                title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top"
+                                                title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top"
+                                                title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Latest News</h2>
+                <div class="block-21 mb-4 d-flex">
+                    <a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
+                    <div class="text">
+                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                        <div class="meta">
+                            <div><a href="#"><span class="icon-calendar"></span> April 7, 2020</a></div>
+                            <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                            <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-21 mb-4 d-flex">
+                    <a class="img mr-4 rounded" style="background-image: url(images/image_2.jpg);"></a>
+                    <div class="text">
+                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                        <div class="meta">
+                            <div><a href="#"><span class="icon-calendar"></span> April 7, 2020</a></div>
+                            <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                            <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Home</a></li>
+                    <li><a href="#" class="py-2 d-block">About</a></li>
+                    <li><a href="#" class="py-2 d-block">Services</a></li>
+                    <li><a href="#" class="py-2 d-block">Works</a></li>
+                    <li><a href="#" class="py-2 d-block">Blog</a></li>
+                    <li><a href="#" class="py-2 d-block">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Have a Questions?</h2>
+                <div class="block-23 mb-3">
                     <ul>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">로그인</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">회원가입</a></li>
+                        <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span>
+                        </li>
+                        <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a>
+                        </li>
+                        <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+
+                <p class="copyright">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
-        </header>
-        <!-- ======= Services Section ======= -->
-        <section id="service" class="services pt-0">
-            <div class="container" data-aos="fade-up">
+        </div>
+    </div>
+</footer>
 
-                <div class="section-header">
-                    <span>Our Services</span>
-                    <h2>Our Services</h2>
 
-                </div>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
 
-                <div class="row gy-4">
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="assets/img/storage-service.jpg" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Storage</a></h3>
-                            <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
-                        </div>
-                    </div><!-- End Card Item -->
+<script src="petsitting-master/js/jquery.min.js"></script>
+<script src="petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="petsitting-master/js/popper.min.js"></script>
+<script src="petsitting-master/js/bootstrap.min.js"></script>
+<script src="petsitting-master/js/jquery.easing.1.3.js"></script>
+<script src="petsitting-master/js/jquery.waypoints.min.js"></script>
+<script src="petsitting-master/js/jquery.stellar.min.js"></script>
+<script src="petsitting-master/js/jquery.animateNumber.min.js"></script>
+<script src="petsitting-master/js/bootstrap-datepicker.js"></script>
+<script src="petsitting-master/js/jquery.timepicker.min.js"></script>
+<script src="petsitting-master/js/owl.carousel.min.js"></script>
+<script src="petsitting-master/js/jquery.magnific-popup.min.js"></script>
+<script src="petsitting-master/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="petsitting-master/js/google-map.js"></script>
+<script src="petsitting-master/js/main.js"></script>
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="assets/img/logistics-service.jpg" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Logistics</a></h3>
-                            <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-                        </div>
-                    </div><!-- End Card Item -->
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="assets/img/cargo-service.jpg" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Cargo</a></h3>
-                            <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="assets/img/trucking-service.jpg" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Trucking</a></h3>
-                            <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="assets/img/packaging-service.jpg" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Packaging</a></h3>
-                            <p>Illo consequuntur quisquam delectus praesentium modi dignissimos facere vel cum onsequuntur maiores beatae consequatur magni voluptates</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="assets/img/warehousing-service.jpg" alt="" class="img-fluid">
-                            </div>
-                            <h3><a href="service-details.html" class="stretched-link">Warehousing</a></h3>
-                            <p>Quas assumenda non occaecati molestiae. In aut earum sed natus eatae in vero. Ab modi quisquam aut nostrum unde et qui est non quo nulla</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                </div>
-
-            </div>
-        </section><!-- End Services Section -->
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+</body>
 </html>
