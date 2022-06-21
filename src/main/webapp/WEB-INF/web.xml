@@ -3,4 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <listener>
+        <listener-class>jdbc.DBCPInitListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>poolConfig</param-name>
+        <param-value>
+            jdbcdriver=oracle.jdbc.driver.OracleDriver
+<!--            oracle db ip주소 : 172.16.127.128-->
+            jdbcUrl=jdbc:oracle:thin:@172.16.127.128:1521:xe
+            dbUser=jjb
+            dbPass=jjb
+            validationQuery=select 1
+            minIdle=3
+            maxTotal=30
+            poolName=petmily
+        </param-value>
+    </context-param>
+
 </web-app>
