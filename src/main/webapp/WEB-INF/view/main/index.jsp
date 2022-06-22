@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +11,18 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="petsitting-master/css/animate.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/animate.css">
 
-    <link rel="stylesheet" href="petsitting-master/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="petsitting-master/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="petsitting-master/css/magnific-popup.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/magnific-popup.css">
 
 
-    <link rel="stylesheet" href="petsitting-master/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="petsitting-master/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/jquery.timepicker.css">
 
-    <link rel="stylesheet" href="petsitting-master/css/flaticon.css">
-    <link rel="stylesheet" href="petsitting-master/css/style.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/flaticon.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/style.css">
 </head>
 <body>
 
@@ -37,14 +38,13 @@
             <div class="col-md-6 d-flex justify-content-md-end">
                 <div class="social-media">
                     <p class="mb-0 d-flex">
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+<!--                        <a href="#" class="d-flex align-items-center justify-content-center">-->
+<!--                            <span class="fa fa-facebook"><i class="sr-only">Facebook</i></span>-->
+<!--                        </a>-->
+                        <a href="/login.do">로그인</a>
+                    </p>
+                    <p class="mb-0 d-flex">
+                        <a href="/join.do">회원가입</a>
                     </p>
                 </div>
             </div>
@@ -422,22 +422,22 @@
 </div>
 
 
-<script src="petsitting-master/js/jquery.min.js"></script>
-<script src="petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="petsitting-master/js/popper.min.js"></script>
-<script src="petsitting-master/js/bootstrap.min.js"></script>
-<script src="petsitting-master/js/jquery.easing.1.3.js"></script>
-<script src="petsitting-master/js/jquery.waypoints.min.js"></script>
-<script src="petsitting-master/js/jquery.stellar.min.js"></script>
-<script src="petsitting-master/js/jquery.animateNumber.min.js"></script>
-<script src="petsitting-master/js/bootstrap-datepicker.js"></script>
-<script src="petsitting-master/js/jquery.timepicker.min.js"></script>
-<script src="petsitting-master/js/owl.carousel.min.js"></script>
-<script src="petsitting-master/js/jquery.magnific-popup.min.js"></script>
-<script src="petsitting-master/js/scrollax.min.js"></script>
+<script src="../../../petsitting-master/js/jquery.min.js"></script>
+<script src="../../../petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../../../petsitting-master/js/popper.min.js"></script>
+<script src="../../../petsitting-master/js/bootstrap.min.js"></script>
+<script src="../../../petsitting-master/js/jquery.easing.1.3.js"></script>
+<script src="../../../petsitting-master/js/jquery.waypoints.min.js"></script>
+<script src="../../../petsitting-master/js/jquery.stellar.min.js"></script>
+<script src="../../../petsitting-master/js/jquery.animateNumber.min.js"></script>
+<script src="../../../petsitting-master/js/bootstrap-datepicker.js"></script>
+<script src="../../../petsitting-master/js/jquery.timepicker.min.js"></script>
+<script src="../../../petsitting-master/js/owl.carousel.min.js"></script>
+<script src="../../../petsitting-master/js/jquery.magnific-popup.min.js"></script>
+<script src="../../../petsitting-master/js/scrollax.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="petsitting-master/js/google-map.js"></script>
-<script src="petsitting-master/js/main.js"></script>
+<script src="../../../petsitting-master/js/google-map.js"></script>
+<script src="../../../petsitting-master/js/main.js"></script>
 
 
 </body>

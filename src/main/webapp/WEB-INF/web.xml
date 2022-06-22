@@ -12,7 +12,6 @@
         <param-name>poolConfig</param-name>
         <param-value>
             jdbcdriver=oracle.jdbc.driver.OracleDriver
-<!--            oracle db ip주소 : 172.16.127.128-->
             jdbcUrl=jdbc:oracle:thin:@172.16.127.128:1521:xe
             dbUser=jjb
             dbPass=jjb
@@ -22,5 +21,51 @@
             poolName=petmily
         </param-value>
     </context-param>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>util.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>ControllerUsingURI</servlet-name>
+        <servlet-class>mvc.controller.ControllerUsingURI</servlet-class>
+        <init-param>
+            <param-name>configFile</param-name>
+            <param-value>
+                /WEB-INF/commandHandlerURI.properties
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ControllerUsingURI</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>LoginCheckFilter</filter-name>
+        <filter-class>filter.LoginCheckFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginCheckFilter</filter-name>
+        <url-pattern>/changePwd.do</url-pattern>
+        <url-pattern>/article/*</url-pattern>
+        <url-pattern>/main/index.do</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/view/main/index.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
