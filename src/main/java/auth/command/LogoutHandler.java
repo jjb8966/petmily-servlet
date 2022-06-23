@@ -9,13 +9,15 @@ import javax.servlet.http.HttpSession;
 public class LogoutHandler implements CommandHandler {
 
 	@Override
-	public String process(HttpServletRequest req, HttpServletResponse res) 
-	throws Exception {
+	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		HttpSession session = req.getSession(false);
+
 		if (session != null) {
 			session.invalidate();
 		}
-		res.sendRedirect(req.getContextPath() + "/login.do");
+
+		res.sendRedirect(req.getContextPath() + "/index.do");
+
 		return null;
 	}
 
