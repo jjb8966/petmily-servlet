@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class JoinHandler implements CommandHandler {
 
-	private static final String FORM_VIEW = "/WEB-INF/view/login/register.jsp";
+	private static final String FORM_VIEW = "/WEB-INF/view/login/joinForm.jsp";
 	private JoinService joinService = new JoinService();
 	
 	@Override
