@@ -1,43 +1,62 @@
 package member.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Member {
 
 	private String id;
+	private String pw;
 	private String name;
-	private String password;
-	private Date regDate;
+	private Date birth;
+	private String gender;
+	private String email;
+	private String phone;
 
-	public Member(String id, String name, String password) {
+	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone) {
 		this.id = id;
+		this.pw = pw;
 		this.name = name;
-		this.password = password;
-//		this.regDate = regDate;
+		this.birth = birth;
+		this.gender = gender;
+		this.email = email;
+		this.phone = phone;
 	}
 
 	public String getId() {
 		return id;
+	}
+	
+	public String getPw() {
+		return pw;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-	
-	public Date getRegDate() {
-		return regDate;
-	}
-	
-	public boolean matchPassword(String pwd) {
-		return password.equals(pwd);
+	public Date getBirth() {
+		return birth;
 	}
 
-	public void changePassword(String newPwd) {
-		this.password = newPwd;
+	public String getGender() {
+		return gender;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+	
+	public boolean matchPw(String pwd) {
+		return pw.equals(pwd);
+	}
+
+	public void changePw(String newPwd) {
+		this.pw = newPwd;
+	}
+
 
 }
