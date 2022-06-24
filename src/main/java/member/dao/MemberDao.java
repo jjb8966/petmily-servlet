@@ -24,7 +24,7 @@ public class MemberDao {
 				member = new Member(rs.getString("ID"),
 						rs.getString("PW"),
 						rs.getString("NAME"),
-						toDate(rs.getString("BIRTH")),
+						rs.getDate("BIRTH"),
 						rs.getString("GENDER"),
 						rs.getString("EMAIL"),
 						rs.getString("PHONE"));
@@ -38,12 +38,6 @@ public class MemberDao {
 		}
 	}
 
-
-	private Date toDate(String date) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
-		Date parseDate = (Date) sdf.parse(date);
-		return parseDate;
-	}
 
 	public void insert(Connection conn, Member mem) throws SQLException, ParseException {
 		try (PreparedStatement pstmt = conn.prepareStatement("insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)")) {
@@ -60,7 +54,7 @@ public class MemberDao {
 
 	public void update(Connection conn, Member member) throws SQLException {
 		try (PreparedStatement pstmt = conn.prepareStatement(
-				"update member set name = ?, password = ? where memberid = ?")) {
+				"update member set name = ?, pw = ? where id = ?")) {
 			pstmt.setString(1, member.getName());
 			pstmt.setString(2, member.getPw());
 			pstmt.setString(3, member.getId());

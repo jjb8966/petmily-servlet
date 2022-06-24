@@ -41,7 +41,7 @@ public class JoinHandler implements CommandHandler {
 		joinReq.setPw(req.getParameter("pw"));
 		joinReq.setConfirmPw(req.getParameter("confirmPw"));
 		joinReq.setName(req.getParameter("name"));
-		joinReq.setBirth(Date.valueOf(req.getParameter("birth")));
+		joinReq.setBirth(Date.valueOf(req.getParameter("birth"))); //¿ä±â
 		joinReq.setGender(req.getParameter("gender"));
 		joinReq.setEmail(req.getParameter("email"));
 		joinReq.setPhone(req.getParameter("phone"));

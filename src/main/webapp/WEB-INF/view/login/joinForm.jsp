@@ -26,7 +26,7 @@
                             	</span>
                                 <p class="random_password"></p>
                                 
-                                <input id="passwordCheck" name="pwCheck" type="password" placeholder="비밀번호 확인">
+                                <input id="passwordCheck" name="confirmPw" type="password" placeholder="비밀번호 확인">
                                 <span class="showpass" onclick="toggle()">
                             		<img id="changepasseyecheck" src="https://i.imgur.com/d1M6y1W.jpg">
                             	</span>
