@@ -10,15 +10,15 @@ import java.util.List;
 
 public class ListAbandonedAnimalService {
 
-    public static final int SIZE = 4;
     private AbandonedAnimalDao abandonedAnimalDao = new AbandonedAnimalDao();
+    private int size = 12;
 
     public AbandonedAnimalPage getAbandonedAnimalPage(int pageNo) {
         try (Connection conn = ConnectionProvider.getConnection()) {
             int total = abandonedAnimalDao.selectCount(conn);
-            List<AbandonedAnimal> content = abandonedAnimalDao.selectIndex(conn, (pageNo - 1) * SIZE, SIZE);
+            List<AbandonedAnimal> content = abandonedAnimalDao.selectIndex(conn, (pageNo - 1) * size, size);
 
-            return new AbandonedAnimalPage(total, pageNo, SIZE, content);
+            return new AbandonedAnimalPage(total, pageNo, size, content);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

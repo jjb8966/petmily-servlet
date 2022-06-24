@@ -40,11 +40,11 @@ public class AbandonedAnimalPage {
         return total;
     }
 
-    public boolean hasNoArticles() {
+    public boolean hasNoAnimals() {
         return total == 0;
     }
 
-    public boolean hasArticles() {
+    public boolean hasAnimals() {
         return total > 0;
     }
 

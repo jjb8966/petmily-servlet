@@ -82,7 +82,7 @@
 <%--                </tr>--%>
 
                 <div class="row">
-                    <c:forEach var="abandonedAnimal" items="${abandonedAnimals.contents}">
+                    <c:forEach var="abandonedAnimal" items="${abandonedAnimals.content}">
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
@@ -100,6 +100,21 @@
                     </div>
                     </c:forEach>
                 </div>
+<%--            <div>--%>
+<%--                    <c:if test="${abandonedAnimals.hasAnimals()}">--%>
+<%--                                <c:if test="${abandonedAnimals.startPage > 5}">--%>
+<%--                                    <a href="list.do?pageNo=${abandonedAnimals.startPage - 5}">[이전]</a>--%>
+<%--                                </c:if>--%>
+<%--                                <c:forEach var="pNo"--%>
+<%--                                           begin="${abandonedAnimals.startPage}"--%>
+<%--                                           end="${abandonedAnimals.endPage}">--%>
+<%--                                    <a href="list.do?pageNo=${pNo}">[${pNo}]</a>--%>
+<%--                                </c:forEach>--%>
+<%--                                <c:if test="${abandonedAnimals.endPage < abandonedAnimals.totalPages}">--%>
+<%--                                    <a href="list.do?pageNo=${abandonedAnimals.startPage + 5}">[다음]</a>--%>
+<%--                                </c:if>--%>
+<%--                    </c:if>--%>
+<%--            </div>--%>
     </div>
 </section>
 

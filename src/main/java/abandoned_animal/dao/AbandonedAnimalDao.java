@@ -15,22 +15,15 @@ public class AbandonedAnimalDao {
 //        Statement statement = null;
         ResultSet rs = null;
 
-        String sql = "SELECT NAME, LOCATION, ADMISSIONDATE, IMGPATH " +
+        String sql = "select NAME, LOCATION, ADMISSIONDATE, IMGPATH " +
                 "FROM " +
-                "(SELECT SEQ, NAME, LOCATION, ADMISSIONDATE, IMGPATH " +
-                "FROM " +
-                "(SELECT ROWNUM AS SEQ, NAME, LOCATION, ADMISSIONDATE, IMGPATH " +
-                "FROM " +
-                "(SELECT * " +
-                "FROM ABANDONEDANIMAL " +
-                "ORDER BY ADMISSIONDATE ))" +
-                "WHERE SEQ >= ? )" +
-                "WHERE ROWNUM <= ?;";
+                "(select rownum, NAME, LOCATION, ADMISSIONDATE, IMGPATH from ABANDONEDANIMAL) " +
+                "where rownum between ? and ?";
 
         try {
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, start);
-            pstmt.setInt(2, ListAbandonedAnimalService.SIZE);
+            pstmt.setInt(2, end);
             rs = pstmt.executeQuery();
 
 //            statement = conn.createStatement();
