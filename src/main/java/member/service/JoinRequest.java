@@ -1,13 +1,18 @@
 package member.service;
 
+import java.sql.Date;
 import java.util.Map;
 
 public class JoinRequest {
 
 	private String id;
+	private String pw;
+	private String confirmPw;
 	private String name;
-	private String password;
-	private String confirmPassword;
+	private Date birth;
+	private String gender;
+	private String email;
+	private String phone;
 
 	public String getId() {
 		return id;
@@ -15,6 +20,22 @@ public class JoinRequest {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+
+	public String getConfirmPw() {
+		return confirmPw;
+	}
+
+	public void setConfirmPw(String confirmPw) {
+		this.confirmPw = confirmPw;
 	}
 
 	public String getName() {
@@ -25,33 +46,53 @@ public class JoinRequest {
 		this.name = name;
 	}
 
-	public String getPassword() {
-		return password;
+	public Date getBirth() {
+		return birth;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setBirth(Date birth) {
+		this.birth = birth;
 	}
 
-	public String getConfirmPassword() {
-		return confirmPassword;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public boolean isPasswordEqualToConfirm() {
-		return password != null && password.equals(confirmPassword);
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public boolean isPwEqualToConfirm() {
+		return pw != null && pw.equals(confirmPw);
 	}
 
 	public void validate(Map<String, Boolean> errors) {
 		checkEmpty(errors, id, "id");
+		checkEmpty(errors, pw, "pw");
+		checkEmpty(errors, confirmPw, "confirmPw");
 		checkEmpty(errors, name, "name");
-		checkEmpty(errors, password, "password");
-		checkEmpty(errors, confirmPassword, "confirmPassword");
-		if (!errors.containsKey("confirmPassword")) {
-			if (!isPasswordEqualToConfirm()) {
+		//checkEmpty(errors, birth, "birth");
+		checkEmpty(errors, gender, "gender");
+		checkEmpty(errors, email, "email");
+		checkEmpty(errors, phone, "phone");
+		if (!errors.containsKey("confirmPw")) {
+			if (!isPwEqualToConfirm()) {
 				errors.put("notMatch", Boolean.TRUE);
 			}
 		}

@@ -69,6 +69,12 @@
     background-color: #f5f5f5
 }
 
+/* .section .container .left-side .form-inputs input[name="gender"] {
+    position: absolute;
+    height: 30px !important;
+    border: none;
+} */
+
 .section .container .left-side .form-inputs input[type="submit"] {
     cursor: pointer;
     border: none;

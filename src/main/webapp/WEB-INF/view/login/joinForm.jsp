@@ -20,24 +20,33 @@
                             
                             
                             <div class="password">
-                                <input id="password" name="password" type="password" placeholder="비밀번호">
+                                <input id="password" name="pw" type="password" placeholder="비밀번호">
                                 <span class="showpass" onclick="toggle()">
                             		<img id="changepasseye" src="https://i.imgur.com/d1M6y1W.jpg">
                             	</span>
                                 <p class="random_password"></p>
                                 
-                                <input id="passwordCheck" name="passwordCheck" type="password" placeholder="비밀번호 확인">
+                                <input id="passwordCheck" name="pwCheck" type="password" placeholder="비밀번호 확인">
                                 <span class="showpass" onclick="toggle()">
-                            		<img id="changepasseye" src="https://i.imgur.com/d1M6y1W.jpg">
+                            		<img id="changepasseyecheck" src="https://i.imgur.com/d1M6y1W.jpg">
                             	</span>
                                 <p class="random_password"></p>
                             </div>
                             
                             <input type="text" name="name" placeholder="이름(닉네임)">
                             <input type="text" name="birth" placeholder="생년월일">
+                            <!-- <div class="genderDiv">
+                            	<label for="male">남</label>
+                            	<input type="radio" name="gender" id="male" value="male">
+                            </div>
+                            <div class="genderDiv">
+                            	<label for="female">여</label>
+                            	<input type="radio" name="gender" id="female" value="female">
+                            </div> -->
+                            
                             <input type="text" name="gender" placeholder="성별">
                             <input type="text" name="email" placeholder="이메일 주소">
-                            <input type="text" name="phone" placeholder="연락처">
+                            <input type="tel" name="phone" placeholder="연락처">
 
 
                             <input id="submit_button" type="submit" value="회원가입">
