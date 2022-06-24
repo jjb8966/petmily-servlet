@@ -70,6 +70,7 @@
                 <!--	        	<li class="nav-item active"><a href="vet.html" class="nav-link">Veterinarian</a></li>-->
                 <!--	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>-->
                 <!--	          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>-->
+                <li class="nav-item"><a href="/abandoned_animal/list.do" class="nav-link">유기동물</a></li>
                 <li class="nav-item"><a href="view/pricing.html" class="nav-link">후원</a></li>
                 <li class="nav-item"><a href="view/blog.html" class="nav-link">찾아요/봤어요</a></li>
                 <li class="nav-item"><a href="view/contact.html" class="nav-link">신고</a></li>
