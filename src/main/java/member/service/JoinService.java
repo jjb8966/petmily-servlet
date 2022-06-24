@@ -7,13 +7,13 @@ import member.model.Member;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Date;
+import java.text.ParseException;
 
 public class JoinService {
 
 	private MemberDao memberDao = new MemberDao();
 
-	public void join(JoinRequest joinReq) {
+	public void join(JoinRequest joinReq) throws ParseException {
 		Connection conn = null;
 		try {
 			conn = ConnectionProvider.getConnection();
@@ -25,7 +25,7 @@ public class JoinService {
 				throw new DuplicateIdException();
 			}
 
-			memberDao.insert(conn, new Member(joinReq.getId(), joinReq.getName(), joinReq.getPassword()));
+			memberDao.insert(conn, new Member(joinReq.getId(), joinReq.getPw(), joinReq.getName(), joinReq.getBirth(), joinReq.getGender(), joinReq.getEmail(), joinReq.getPhone()));
 			conn.commit();
 		} catch (SQLException e) {
 			JdbcUtil.rollback(conn);

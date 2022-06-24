@@ -35,7 +35,8 @@ public class LoginHandler implements CommandHandler {
 	//POST
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String id = trim(req.getParameter("id"));
-		String password = trim(req.getParameter("password"));
+		/* String password = trim(req.getParameter("password")); */
+		String password = trim(req.getParameter("pw"));
 
 		Map<String, Boolean> errors = new HashMap<>();
 
@@ -44,7 +45,8 @@ public class LoginHandler implements CommandHandler {
 		if (id == null || id.isEmpty())
 			errors.put("id", Boolean.TRUE);
 		if (password == null || password.isEmpty())
-			errors.put("password", Boolean.TRUE);
+			/* errors.put("password", Boolean.TRUE); */
+			errors.put("pw", Boolean.TRUE);
 
 		if (!errors.isEmpty()) {
 			return FORM_VIEW;

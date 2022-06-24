@@ -4,11 +4,13 @@ import jdbc.JdbcUtil;
 import member.model.Member;
 
 import java.sql.*;
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 
 public class MemberDao {
 
-	public Member selectById(Connection conn, String id) throws SQLException {
+	public Member selectById(Connection conn, String id) throws SQLException, ParseException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
@@ -20,38 +22,41 @@ public class MemberDao {
 			Member member = null;
 			if (rs.next()) {
 				member = new Member(rs.getString("ID"),
+						rs.getString("PW"),
 						rs.getString("NAME"),
-						rs.getString("PW"));
+						rs.getDate("BIRTH"),
+						rs.getString("GENDER"),
+						rs.getString("EMAIL"),
+						rs.getString("PHONE"));
 //						toDate(rs.getTimestamp("regdate")));
 			}
-
 			return member;
+			
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
 		}
 	}
 
-	private Date toDate(Timestamp date) {
-		return date == null ? null : new Date(date.getTime());
-	}
 
-	public void insert(Connection conn, Member mem) throws SQLException {
-		try (PreparedStatement pstmt = 
-				conn.prepareStatement("insert into member values(?,?,?,?)")) {
+	public void insert(Connection conn, Member mem) throws SQLException, ParseException {
+		try (PreparedStatement pstmt = conn.prepareStatement("insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)")) {
 			pstmt.setString(1, mem.getId());
-			pstmt.setString(2, mem.getName());
-			pstmt.setString(3, mem.getPassword());
-			pstmt.setTimestamp(4, new Timestamp(mem.getRegDate().getTime()));
+			pstmt.setString(2, mem.getPw());
+			pstmt.setString(3, mem.getName());
+			pstmt.setDate(4, mem.getBirth());
+			pstmt.setString(5, mem.getGender());
+			pstmt.setString(6, mem.getEmail());
+			pstmt.setString(7, mem.getPhone());
 			pstmt.executeUpdate();
 		}
 	}
 
 	public void update(Connection conn, Member member) throws SQLException {
 		try (PreparedStatement pstmt = conn.prepareStatement(
-				"update member set name = ?, password = ? where memberid = ?")) {
+				"update member set name = ?, pw = ? where id = ?")) {
 			pstmt.setString(1, member.getName());
-			pstmt.setString(2, member.getPassword());
+			pstmt.setString(2, member.getPw());
 			pstmt.setString(3, member.getId());
 			pstmt.executeUpdate();
 		}

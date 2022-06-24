@@ -16,14 +16,14 @@
                             <%--                        <input type="text" placeholder="Email Address">--%>
 
                             <div class="password">
-                                <input id="password" name="password" type="password" placeholder="Password"> <span
+                                <input id="password" name="pw" type="password" placeholder="Password"> <span
                                     class="showpass" onclick="toggle()">
                             <img id="changepasseye" src="https://i.imgur.com/d1M6y1W.jpg"> </span>
                                 <p class="random_password"></p>
                             </div>
 
                             <input id="submit_button" type="submit" value="login">
-                            <%--                        <p class="login-text">Already have an account? <a href="#">login</a></p>--%>
+                            <%--<p class="login-text">Already have an account? <a href="#">login</a></p>--%>
                         </div>
                     </form>
                 </div>
