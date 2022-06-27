@@ -33,8 +33,9 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Veterinarian <i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Meet Our Veterinary Doctor</h1>
+<%--                <p class="breadcrumbs mb-2"><span class="mr-2">--%>
+<%--                    <a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Veterinarian <i class="ion-ios-arrow-forward"></i></span></p>--%>
+                <h1 class="mb-0 bread">유기동물 조회</h1>
             </div>
         </div>
     </div>
@@ -65,56 +66,57 @@
         <%--            </div>--%>
         <%--        </div>--%>
 
-<%--            <c:forEach var="boardVO" items="${boardList}">    --%>
-<%--                <p><c:out value="${boardVO.title}" /></p>--%>
-<%--            </c:forEach>--%>
+        <%--            <c:forEach var="boardVO" items="${boardList}">    --%>
+        <%--                <p><c:out value="${boardVO.title}" /></p>--%>
+        <%--            </c:forEach>--%>
 
 
-<%--                <tr>--%>
-<%--                    <td>${article.number}</td>--%>
-<%--                    <td>--%>
-<%--                        <a href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}">--%>
-<%--                            <c:out value="${article.title}"/>--%>
-<%--                        </a>--%>
-<%--                    </td>--%>
-<%--                    <td>${article.writer.name}</td>--%>
-<%--                    <td>${article.readCount}</td>--%>
-<%--                </tr>--%>
+        <%--                <tr>--%>
+        <%--                    <td>${article.number}</td>--%>
+        <%--                    <td>--%>
+        <%--                        <a href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}">--%>
+        <%--                            <c:out value="${article.title}"/>--%>
+        <%--                        </a>--%>
+        <%--                    </td>--%>
+        <%--                    <td>${article.writer.name}</td>--%>
+        <%--                    <td>${article.readCount}</td>--%>
+        <%--                </tr>--%>
 
-                <div class="row">
-                    <c:forEach var="abandonedAnimal" items="${abandonedAnimals.content}">
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(${abandonedAnimal.imgPath});"></div>
-                            </div>
+        <div class="row">
+            <c:forEach var="abandonedAnimal" items="${abandonedAnimals.content}">
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="staff">
+                        <div class="img-wrap d-flex align-items-stretch">
+                            <div class="img align-self-stretch"
+                                 style="background-image: url(${abandonedAnimal.imgPath});"></div>
+                        </div>
 
-                            <div class="text pt-3 px-3 pb-4 text-center">
-                                <h3>${abandonedAnimal.name}</h3>
-                                <span class="position mb-2">${abandonedAnimal.location}</span>
-                                <div class="faded">
-                                    <p>${abandonedAnimal.admissionDate}</p>
-                                </div>
+                        <div class="text pt-3 px-3 pb-4 text-center">
+                            <h3>${abandonedAnimal.name}</h3>
+                            <span class="position mb-2">${abandonedAnimal.location}</span>
+                            <div class="faded">
+                                <p>${abandonedAnimal.admissionDate}</p>
                             </div>
                         </div>
                     </div>
-                    </c:forEach>
                 </div>
-<%--            <div>--%>
-<%--                    <c:if test="${abandonedAnimals.hasAnimals()}">--%>
-<%--                                <c:if test="${abandonedAnimals.startPage > 5}">--%>
-<%--                                    <a href="list.do?pageNo=${abandonedAnimals.startPage - 5}">[이전]</a>--%>
-<%--                                </c:if>--%>
-<%--                                <c:forEach var="pNo"--%>
-<%--                                           begin="${abandonedAnimals.startPage}"--%>
-<%--                                           end="${abandonedAnimals.endPage}">--%>
-<%--                                    <a href="list.do?pageNo=${pNo}">[${pNo}]</a>--%>
-<%--                                </c:forEach>--%>
-<%--                                <c:if test="${abandonedAnimals.endPage < abandonedAnimals.totalPages}">--%>
-<%--                                    <a href="list.do?pageNo=${abandonedAnimals.startPage + 5}">[다음]</a>--%>
-<%--                                </c:if>--%>
-<%--                    </c:if>--%>
-<%--            </div>--%>
+            </c:forEach>
+        </div>
+<%--        <div>--%>
+<%--            <c:if test="${abandonedAnimals.hasAnimals()}">--%>
+<%--                <c:if test="${abandonedAnimals.startPage > 5}">--%>
+<%--                    <a href="/abandoned_animal/list.do?pageNo=${abandonedAnimals.startPage - 5}">[이전]</a>--%>
+<%--                </c:if>--%>
+<%--                <c:forEach var="pNo"--%>
+<%--                           begin="${abandonedAnimals.startPage}"--%>
+<%--                           end="${abandonedAnimals.endPage}">--%>
+<%--                    <a href="/abandoned_animal/list.do?pageNo=${pNo}">[${pNo}]</a>--%>
+<%--                </c:forEach>--%>
+<%--                <c:if test="${abandonedAnimals.endPage < abandonedAnimals.totalPages}">--%>
+<%--                    <a href="/abandoned_animal/list.do?pageNo=${abandonedAnimals.startPage + 5}">[다음]</a>--%>
+<%--                </c:if>--%>
+<%--            </c:if>--%>
+<%--        </div>--%>
     </div>
 </section>
 

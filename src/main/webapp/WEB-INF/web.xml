@@ -12,9 +12,9 @@
         <param-name>poolConfig</param-name>
         <param-value>
             jdbcdriver=oracle.jdbc.driver.OracleDriver
-            jdbcUrl=jdbc:oracle:thin:@172.16.127.128:1521:xe
+            jdbcUrl=jdbc:oracle:thin:@petmily_medium?TNS_ADMIN=/Users/joojongbum/oracle_db/Wallet_petmily/
             dbUser=jjb
-            dbPass=jjb
+            dbPass=Petmilymember1
             validationQuery=select 1
             minIdle=3
             maxTotal=30
