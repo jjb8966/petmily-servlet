@@ -21,13 +21,15 @@ public class MemberDao {
 			rs = pstmt.executeQuery();
 			Member member = null;
 			if (rs.next()) {
-				member = new Member(rs.getString("ID"),
+				member = new Member(rs.getInt("MNUMBER"),
+						rs.getString("ID"),
 						rs.getString("PW"),
 						rs.getString("NAME"),
 						rs.getDate("BIRTH"),
 						rs.getString("GENDER"),
 						rs.getString("EMAIL"),
-						rs.getString("PHONE"));
+						rs.getString("PHONE"),
+						rs.getString("GRADE"));
 //						toDate(rs.getTimestamp("regdate")));
 			}
 			return member;
@@ -37,7 +39,6 @@ public class MemberDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
-
 
 	public void insert(Connection conn, Member mem) throws SQLException, ParseException {
 		try (PreparedStatement pstmt = conn.prepareStatement("insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)")) {

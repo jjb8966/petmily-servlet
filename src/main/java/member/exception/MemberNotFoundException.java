@@ -1,4 +1,4 @@
-package member.service;
+package member.exception;
 
 public class MemberNotFoundException extends RuntimeException {
 

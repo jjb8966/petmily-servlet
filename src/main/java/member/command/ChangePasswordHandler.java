@@ -1,9 +1,9 @@
 package member.command;
 
 import auth.service.User;
-import member.service.ChangePasswordService;
-import member.service.InvalidPasswordException;
-import member.service.MemberNotFoundException;
+import member.exception.InvalidPasswordException;
+import member.exception.MemberNotFoundException;
+import member.service.MemberService;
 import mvc.command.CommandHandler;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class ChangePasswordHandler implements CommandHandler {
 	private static final String FORM_VIEW = "/WEB-INF/view/changePwdForm.jsp";
-	private ChangePasswordService changePwdSvc = new ChangePasswordService();
+	private MemberService memberService = new MemberService();
 	
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) 
@@ -54,7 +54,7 @@ public class ChangePasswordHandler implements CommandHandler {
 		}
 		
 		try {
-			changePwdSvc.changePassword(user.getId(), curPwd, newPwd);
+			memberService.changePassword(user.getId(), curPwd, newPwd);
 			return "/WEB-INF/view/changePwdSuccess.jsp";
 		} catch (InvalidPasswordException e) {
 			errors.put("badCurPwd", Boolean.TRUE);
