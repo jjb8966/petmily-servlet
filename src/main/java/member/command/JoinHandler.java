@@ -1,15 +1,14 @@
 package member.command;
 
-import member.service.DuplicateIdException;
-import member.service.JoinRequest;
-import member.service.JoinService;
+import member.exception.DuplicateIdException;
+import member.form.JoinRequest;
+import member.service.MemberService;
 import mvc.command.CommandHandler;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +16,7 @@ import java.util.Map;
 public class JoinHandler implements CommandHandler {
 
 	private static final String FORM_VIEW = "/WEB-INF/view/login/joinForm.jsp";
-	private JoinService joinService = new JoinService();
+	private MemberService memberService = new MemberService();
 	
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws ParseException {
@@ -41,12 +40,11 @@ public class JoinHandler implements CommandHandler {
 		joinReq.setPw(req.getParameter("pw"));
 		joinReq.setConfirmPw(req.getParameter("confirmPw"));
 		joinReq.setName(req.getParameter("name"));
-		joinReq.setBirth(Date.valueOf(req.getParameter("birth"))); //¿ä±â
+		joinReq.setBirth(Date.valueOf(req.getParameter("birth"))); //ï¿½ï¿½ï¿½
 		joinReq.setGender(req.getParameter("gender"));
 		joinReq.setEmail(req.getParameter("email"));
 		joinReq.setPhone(req.getParameter("phone"));
-		
-		
+
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("errors", errors);
 		
@@ -57,7 +55,7 @@ public class JoinHandler implements CommandHandler {
 		}
 		
 		try {
-			joinService.join(joinReq);
+			memberService.join(joinReq);
 			return "/WEB-INF/view/login/joinSuccess.jsp";
 		} catch (DuplicateIdException e) {
 			errors.put("duplicateId", Boolean.TRUE);
