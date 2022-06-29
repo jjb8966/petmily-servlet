@@ -27,243 +27,569 @@
 
 <%@ include file="/WEB-INF/view/include/header.jspf" %>
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
-         data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end">
-            <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Veterinarian <i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Meet Our Veterinary Doctor</h1>
-            </div>
+ <div class="hero-wrap js-fullheight" style="background-image: url('petsitting-master/images/bg_4.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-11 ftco-animate text-center">
+          	<h1 class="mb-4">사지 말고 입양하세요</h1>
+            <p><a href="#" class="btn btn-primary mr-md-4 py-3 px-4">수 많은 아이들이 당신을 기다리고 있습니다<span class="ion-ios-arrow-forward"></span></a></p>
+          </div>
         </div>
+      </div>
     </div>
-</section>
 
-<section class="ftco-section bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Lloyd Wilson</h3>
-                        <span class="position mb-2">Health Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-2.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Rachel Parker</h3>
-                        <span class="position mb-2">Life &amp; Business Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-3.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Ian Smith</h3>
-                        <span class="position mb-2">Executive Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-4.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Alicia Henderson</h3>
-                        <span class="position mb-2">Health Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-5.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Lloyd Wilson</h3>
-                        <span class="position mb-2">Executive Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-6.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Rachel Parker</h3>
-                        <span class="position mb-2">Health Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-7.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Ian Smith</h3>
-                        <span class="position mb-2">Health Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(images/staff-8.jpg);"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Fred Henderson</h3>
-                        <span class="position mb-2">Executive Coach</span>
-                        <div class="faded">
-                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="ftco-section bg-light ftco-no-pt ftco-intro">
+    	<div class="container">
+    		<div class="row">
+          <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
+            <div class="d-block services active text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+            		<span class="flaticon-blind"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">봉사하기</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
+            <div class="d-block services text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+            		<span class="flaticon-dog-eating"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">유기동물 조회</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
+            <div class="d-block services text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+            		<span class="flaticon-grooming"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">커뮤니티</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+              </div>
+            </div>      
+          </div>
         </div>
-    </div>
-</section>
+    	</div>
+    </section>
+    
+     <section class="ftco-section ftco-no-pt ftco-no-pb">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-5 d-flex">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(petsitting-master/images/about-2.png);">
+    				</div>
+    			</div>
+    			<div class="col-md-7 pl-md-5 py-md-5">
+    				<div class="heading-section pt-md-5">
+	            <h2 class="mb-4">반려견, 이제 그저 동물이 아닌 가족입니다.</h2>
+    				</div>
+    				<div class="row">
+	    				<div class="col-md-6 services-2 w-100 d-flex">
+	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-stethoscope"></span></div>
+	    					<div class="text pl-3">
+	    						<h4>수많은 유기동물들</h4>
+	    						<p>한 해에 수천마리의 동물이 유기되고 있습니다.</p>
+	    					</div>
+	    				</div>
+	    				<div class="col-md-6 services-2 w-100 d-flex">
+	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-customer-service"></span></div>
+	    					<div class="text pl-3">
+	    						<h4>Customer Supports</h4>
+	    						<p>Far far away, behind the word mountains, far from the countries.</p>
+	    					</div>
+	    				</div>
+	    				<div class="col-md-6 services-2 w-100 d-flex">
+	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-emergency-call"></span></div>
+	    					<div class="text pl-3">
+	    						<h4>Emergency Services</h4>
+	    						<p>Far far away, behind the word mountains, far from the countries.</p>
+	    					</div>
+	    				</div>
+	    				<div class="col-md-6 services-2 w-100 d-flex">
+	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-veterinarian"></span></div>
+	    					<div class="text pl-3">
+	    						<h4>Veterinary Help</h4>
+	    						<p>Far far away, behind the word mountains, far from the countries.</p>
+	    					</div>
+	    				</div>
+	    			</div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-counter" id="section-counter">
+    	<div class="container">
+				<div class="row">
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="214">0</strong>
+              </div>
+              <div class="text">
+              	<span>오늘 구조된 동물</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="16721">0</strong>
+              </div>
+              <div class="text">
+              	<span>가족을 기다려요</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="158">0</strong>
+              </div>
+              <div class="text">
+              	<span>입양</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="14">0</strong>
+              </div>
+              <div class="text">
+              	<span>안락사</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section bg-light ftco-faqs">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6 order-md-last">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(images/about.jpg);">
+    					<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+    						<span class="fa fa-play"></span>
+    					</a>
+    				</div>
+    				<div class="d-flex mt-3">
+    					<div class="img img-2 mr-md-2" style="background-image:url(images/about-2.jpg);"></div>
+    					<div class="img img-2 ml-md-2" style="background-image:url(images/about-3.jpg);"></div>
+    				</div>
+    			</div>
+
+    			<div class="col-lg-6">
+    				<div class="heading-section mb-5 mt-5 mt-lg-0">
+	            <h2 class="mb-3">자주 하는 질문 모음</h2>
+	            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    				</div>
+    				<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+						  <div class="card">
+						    <div class="card-header p-0" id="headingOne">
+						      <h2 class="mb-0">
+						        <button href="#collapseOne" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
+						        	<p class="mb-0">입양 절차는 어떻게 진행하게 되나요?</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+						      <div class="card-body py-3 px-0">
+						      	<ol>
+						      		<li>Far far away, behind the word mountains</li>
+						      		<li>Consonantia, there live the blind texts</li>
+						      		<li>When she reached the first hills of the Italic Mountains</li>
+						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
+						      		<li>Separated they live in Bookmarksgrove right</li>
+						      	</ol>
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="card">
+						    <div class="card-header p-0" id="headingTwo" role="tab">
+						      <h2 class="mb-0">
+						        <button href="#collapseTwo" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
+						        	<p class="mb-0">후원하던 보호소가 사라졌어요! 제가 후원하던 동물은 어떻게 되나요?</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="card-body py-3 px-0">
+						      	<ol>
+						      		<li>Far far away, behind the word mountains</li>
+						      		<li>Consonantia, there live the blind texts</li>
+						      		<li>When she reached the first hills of the Italic Mountains</li>
+						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
+						      		<li>Separated they live in Bookmarksgrove right</li>
+						      	</ol>
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="card">
+						    <div class="card-header p-0" id="headingThree" role="tab">
+						      <h2 class="mb-0">
+						        <button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
+						        	<p class="mb-0">What is the best grooming for your pets?</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="card-body py-3 px-0">
+						      	<ol>
+						      		<li>Far far away, behind the word mountains</li>
+						      		<li>Consonantia, there live the blind texts</li>
+						      		<li>When she reached the first hills of the Italic Mountains</li>
+						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
+						      		<li>Separated they live in Bookmarksgrove right</li>
+						      	</ol>
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="card">
+						    <div class="card-header p-0" id="headingFour" role="tab">
+						      <h2 class="mb-0">
+						        <button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
+						        	<p class="mb-0">What are those requirements for sitting pets?</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="card-body py-3 px-0">
+						      	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section testimony-section" style="background-image: url('images/bg_2.jpg');">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2>보호 기간이 얼마 남지 않은 아이들 </h2>
+            <%-- 보호기간이 얼마 남지 않은 안락사 예정인 아이들이 노출됐으면 하는 페이지입니다.--%>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                    	<div class="pl-3">
+		                    <p class="name">바둑이</p>
+		                    <span class="position">강아지 - 비숑</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                    	<div class="pl-3">
+		                    <p class="name">코코</p>
+		                    <span class="position">고양이 - 코리안 숏헤어</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                    	<div class="pl-3">
+		                    <p class="name">몽실이</p>
+		                    <span class="position">강아지 - 삽살견</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                    	<div class="pl-3">
+		                    <p class="name">시루</p>
+		                    <span class="position">강아지 - 말티즈</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <div class="d-flex align-items-center">
+                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                    	<div class="pl-3">
+		                    <p class="name">치즈</p>
+		                    <span class="position">고양이 - 코리안 숏헤어</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2>내새끼 자랑해요</h2>
+          </div>
+        </div>
+				<div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-1.jpg);">
+            	<a href="images/gallery-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="fa fa-expand"></span>
+	    				</a>
+            	<div class="desc w-100 px-4">
+	              <div class="text w-100 mb-3">
+	              	<span>Cat</span>
+	              	<h2><a href="work-single.html">Persian Cat</a></h2>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-2.jpg);">
+            	<a href="images/gallery-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="fa fa-expand"></span>
+	    				</a>
+            	<div class="desc w-100 px-4">
+	              <div class="text w-100 mb-3">
+	              	<span>Dog</span>
+	              	<h2><a href="work-single.html">Pomeranian</a></h2>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-3.jpg);">
+            	<a href="images/gallery-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="fa fa-expand"></span>
+	    				</a>
+            	<div class="desc w-100 px-4">
+	              <div class="text w-100 mb-3">
+	              	<span>Cat</span>
+	              	<h2><a href="work-single.html">Sphynx Cat</a></h2>
+	              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 ftco-animate">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-4.jpg);">
+            	<a href="images/gallery-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="fa fa-expand"></span>
+	    				</a>
+            	<div class="desc w-100 px-4">
+	              <div class="text w-100 mb-3">
+	              	<span>Cat</span>
+	              	<h2><a href="work-single.html">British Shorthair</a></h2>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-5.jpg);">
+            	<a href="images/gallery-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="fa fa-expand"></span>
+	    				</a>
+            	<div class="desc w-100 px-4">
+	              <div class="text w-100 mb-3">
+	              	<span>Dog</span>
+	              	<h2><a href="work-single.html">Beagle</a></h2>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-6.jpg);">
+            	<a href="images/gallery-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="fa fa-expand"></span>
+	    				</a>
+            	<div class="desc w-100 px-4">
+	              <div class="text w-100 mb-3">
+	              	<span>Dog</span>
+	              	<h2><a href="work-single.html">Pug</a></h2>
+	              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+			</div>
+		</section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2>오늘의 입양 후기</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');">
+              </a>
+              <div class="text p-4">
+              	<div class="meta mb-2">
+                  <div><a href="#">April 07, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_2.jpg');">
+              </a>
+              <div class="text p-4">
+              	<div class="meta mb-2">
+                  <div><a href="#">April 07, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_3.jpg');">
+              </a>
+              <div class="text p-4">
+              	<div class="meta mb-2">
+                  <div><a href="#">April 07, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_3.jpg);">
+			<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row d-md-flex justify-content-end">
+    			<div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
+    				<h2 class="mb-4">Free Consultation</h2>
+    				<form action="#" class="appointment">
+    					<div class="row">
+    						<div class="col-md-12">
+									<div class="form-group">
+			    					<div class="form-field">
+	          					<div class="select-wrap">
+	                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
+	                      <select name="" id="" class="form-control">
+	                      	<option value="">Select services</option>
+	                        <option value="">Cat Sitting</option>
+	                        <option value="">Dog Walk</option>
+	                        <option value="">Pet Spa</option>
+	                        <option value="">Pet Grooming</option>
+	                        <option value="">Pet Daycare</option>
+	                      </select>
+	                    </div>
+			              </div>
+			    				</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+			              <input type="text" class="form-control" placeholder="Your Name">
+			            </div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+			              <input type="text" class="form-control" placeholder="Vehicle number">
+			            </div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+			    					<div class="input-wrap">
+			            		<div class="icon"><span class="fa fa-calendar"></span></div>
+			            		<input type="text" class="form-control appointment_date" placeholder="Date">
+		            		</div>
+			    				</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+			    					<div class="input-wrap">
+			            		<div class="icon"><span class="fa fa-clock-o"></span></div>
+			            		<input type="text" class="form-control appointment_time" placeholder="Time">
+		            		</div>
+			    				</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+			              <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+			            </div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+			              <input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
+			            </div>
+								</div>
+    					</div>
+	          </form>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+
 
 <%@ include file="/WEB-INF/view/include/footer.jspf" %>
 
