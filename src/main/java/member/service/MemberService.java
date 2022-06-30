@@ -96,4 +96,38 @@ public class MemberService {
             JdbcUtil.close(conn);
         }
     }
+
+    public void withdraw(int mNumber) {
+        Connection conn = null;
+
+        try {
+            conn = ConnectionProvider.getConnection();
+
+            memberDao.delete(conn, mNumber);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(conn);
+        }
+    }
+
+    public boolean checkPwCorrect(int mNumber, String pw) {
+        Connection conn = null;
+
+        try {
+            conn = ConnectionProvider.getConnection();
+
+            Member member = memberDao.selectByMNumber(conn, mNumber);
+
+            if (member.getPw().equals(pw)) {
+                return true;
+            }
+
+            return false;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(conn);
+        }
+    }
 }
