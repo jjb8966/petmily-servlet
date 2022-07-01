@@ -13,7 +13,16 @@ public class Member {
 	private String email;
 	private String phone;
 	private String grade;
+	public Member(String pw, String name, String email, String phone,String id) {
+		
+		this.pw = pw;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.id = id;
+	}
 
+	
 	public Member(int mNumber, String id, String pw, String name, Date birth, String gender, String email, String phone, String grade) {
 		this.mNumber = mNumber;
 		this.gender = gender;
@@ -26,7 +35,14 @@ public class Member {
 		this.birth = birth;
 	}
 
-	// insert를 위한 생성자
+	@Override
+	public String toString() {
+		return "Member [mNumber=" + mNumber + ", id=" + id + ", pw=" + pw + ", name=" + name + ", birth=" + birth
+				+ ", gender=" + gender + ", email=" + email + ", phone=" + phone + ", grade=" + grade + "]";
+	}
+
+
+	// insert瑜� �쐞�븳 �깮�꽦�옄
 	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone) {
 		this.id = id;
 		this.pw = pw;
