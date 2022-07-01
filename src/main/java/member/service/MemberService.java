@@ -25,7 +25,7 @@ public class MemberService {
             conn = ConnectionProvider.getConnection();
             conn.setAutoCommit(false);
 
-            Member member = memberDao.selectById(conn, userId);
+            Member member = memberDao.selectById(conn, userId, newPwd);
             if (member == null) {
                 throw new MemberNotFoundException();
             }
@@ -49,7 +49,7 @@ public class MemberService {
             conn = ConnectionProvider.getConnection();
             conn.setAutoCommit(false);
 
-            Member member = memberDao.selectById(conn, joinReq.getId());
+            Member member = memberDao.selectById(conn, joinReq.getId(), null);
             if (member != null) {
                 JdbcUtil.rollback(conn);
                 throw new DuplicateIdException();
@@ -71,7 +71,7 @@ public class MemberService {
         try {
             conn = ConnectionProvider.getConnection();
 
-            Member member = memberDao.selectById(conn, userId);
+            Member member = memberDao.selectById(conn, userId, userId);
 
             if (member == null) {
                 throw new MemberNotFoundException();
@@ -96,4 +96,25 @@ public class MemberService {
             JdbcUtil.close(conn);
         }
     }
+
+	public void changeMemberInfo(String id, Member member) throws ParseException {
+		Connection conn = null;
+        try {
+            conn = ConnectionProvider.getConnection();
+            conn.setAutoCommit(false);
+
+      
+            if (member == null) {
+                throw new MemberNotFoundException();
+            }
+            memberDao.update(conn, member);
+            conn.commit();
+        } catch (SQLException e) {
+            JdbcUtil.rollback(conn);
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(conn);
+        }
+    }
+	
 }
