@@ -17,104 +17,104 @@ import java.text.ParseException;
 
 public class MemberService {
 
-    private MemberDao memberDao = new MemberDao();
+	private MemberDao memberDao = new MemberDao();
 
-    public void changePassword(String userId, String curPwd, String newPwd) throws ParseException {
-        Connection conn = null;
-        try {
-            conn = ConnectionProvider.getConnection();
-            conn.setAutoCommit(false);
+	public void changePassword(String userId, String curPwd, String newPwd) throws ParseException {
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			conn.setAutoCommit(false);
 
-            Member member = memberDao.selectById(conn, userId, newPwd);
-            if (member == null) {
-                throw new MemberNotFoundException();
-            }
-            if (!member.matchPw(curPwd)) {
-                throw new InvalidPasswordException();
-            }
-            member.changePw(newPwd);
-            memberDao.update(conn, member);
-            conn.commit();
-        } catch (SQLException e) {
-            JdbcUtil.rollback(conn);
-            throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
-        }
-    }
+			Member member = memberDao.selectById(conn, userId);
+			if (member == null) {
+				throw new MemberNotFoundException();
+			}
+			if (!member.matchPw(curPwd)) {
+				throw new InvalidPasswordException();
+			}
+			member.changePw(newPwd);
+			memberDao.update(conn, member);
+			conn.commit();
+		} catch (SQLException e) {
+			JdbcUtil.rollback(conn);
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
 
-    public void join(JoinRequest joinReq) throws ParseException {
-        Connection conn = null;
-        try {
-            conn = ConnectionProvider.getConnection();
-            conn.setAutoCommit(false);
+	public void join(JoinRequest joinReq) throws ParseException {
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			conn.setAutoCommit(false);
 
-            Member member = memberDao.selectById(conn, joinReq.getId(), null);
-            if (member != null) {
-                JdbcUtil.rollback(conn);
-                throw new DuplicateIdException();
-            }
+			Member member = memberDao.selectById(conn, joinReq.getId());
+			if (member != null) {
+				JdbcUtil.rollback(conn);
+				throw new DuplicateIdException();
+			}
 
-            memberDao.insert(conn, new Member(joinReq.getId(), joinReq.getPw(), joinReq.getName(), joinReq.getBirth(), joinReq.getGender(), joinReq.getEmail(), joinReq.getPhone()));
-            conn.commit();
-        } catch (SQLException e) {
-            JdbcUtil.rollback(conn);
-            throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
-        }
-    }
+			memberDao.insert(conn, new Member(joinReq.getId(), joinReq.getPw(), joinReq.getName(), joinReq.getBirth(),
+					joinReq.getGender(), joinReq.getEmail(), joinReq.getPhone()));
+			conn.commit();
+		} catch (SQLException e) {
+			JdbcUtil.rollback(conn);
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
 
-    public MemberInfo findById(String userId) {
-        Connection conn = null;
+	public MemberInfo findById(String userId) {
+		Connection conn = null;
 
-        try {
-            conn = ConnectionProvider.getConnection();
+		try {
+			conn = ConnectionProvider.getConnection();
 
-            Member member = memberDao.selectById(conn, userId, userId);
+			Member member = memberDao.selectById(conn, userId);
 
-            if (member == null) {
-                throw new MemberNotFoundException();
-            }
+			if (member == null) {
+				throw new MemberNotFoundException();
+			}
 
-            String id = member.getId();
-            String pw = member.getPw();
-            String name = member.getName();
-            Date birth = member.getBirth();
-            String gender = member.getGender();
-            String email = member.getEmail();
-            String phone = member.getPhone();
-            String grade = member.getGrade();
+			String id = member.getId();
+			String pw = member.getPw();
+			String name = member.getName();
+			Date birth = member.getBirth();
+			String gender = member.getGender();
+			String email = member.getEmail();
+			String phone = member.getPhone();
+			String grade = member.getGrade();
 
-            MemberInfo memberInfo = new MemberInfo(id, pw, name, birth, gender, email, phone, grade);
-            return memberInfo;
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
-        }
-    }
+			MemberInfo memberInfo = new MemberInfo(id, pw, name, birth, gender, email, phone, grade);
+			return memberInfo;
+		} catch (ParseException e) {
+			throw new RuntimeException(e);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
 
 	public void changeMemberInfo(String id, Member member) throws ParseException {
 		Connection conn = null;
-        try {
-            conn = ConnectionProvider.getConnection();
-            conn.setAutoCommit(false);
+		try {
+			conn = ConnectionProvider.getConnection();
+			conn.setAutoCommit(false);
 
-      
-            if (member == null) {
-                throw new MemberNotFoundException();
-            }
-            memberDao.update(conn, member);
-            conn.commit();
-        } catch (SQLException e) {
-            JdbcUtil.rollback(conn);
-            throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
-        }
-    }
-	
+			if (member == null) {
+				throw new MemberNotFoundException();
+			}
+			memberDao.update(conn, member);
+			conn.commit();
+		} catch (SQLException e) {
+			JdbcUtil.rollback(conn);
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
+
 }
