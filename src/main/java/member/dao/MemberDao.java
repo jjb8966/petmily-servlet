@@ -58,8 +58,8 @@ public class MemberDao {
 				"update member set name = ?, pw = ?, phone = ?, email = ? where id = ?")) {
 			pstmt.setString(1, member.getName());
 			pstmt.setString(2, member.getPw());
-			pstmt.setString(3, member.getEmail());
-			pstmt.setString(4, member.getPhone());
+			pstmt.setString(3, member.getPhone());
+			pstmt.setString(4, member.getEmail());
 			pstmt.setString(5, member.getId());
 			pstmt.executeUpdate();
 			
