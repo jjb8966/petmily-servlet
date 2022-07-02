@@ -65,6 +65,10 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 		try {
 			memberService.changeMemberInfo(user.getId(), newMemberInfo);
 			User newUser=new User(user.getId(),name);
+			
+	        MemberInfo updateInfo = memberService.findById(id);
+	        req.setAttribute("memberInfo", updateInfo);
+	        
 			req.getSession().setAttribute("authUser", newUser);
 			return "/WEB-INF/view/member/mypage.jsp";
 		} catch (MemberNotFoundException e) {
