@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class MemberDao {
 
-	public Member selectById(Connection conn, String id, String newMemberInfo) throws SQLException, ParseException {
+	public Member selectById(Connection conn, String id) throws SQLException, ParseException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
@@ -55,7 +55,7 @@ public class MemberDao {
 	public void update(Connection conn, Member member) throws SQLException {
 			
 		try (PreparedStatement pstmt = conn.prepareStatement(
-				"update member set name = ?, pw = ?,email = ? phone = ? where id = ?")) {
+				"update member set name = ?, pw = ?, phone = ?, email = ? where id = ?")) {
 			pstmt.setString(1, member.getName());
 			pstmt.setString(2, member.getPw());
 			pstmt.setString(3, member.getEmail());
