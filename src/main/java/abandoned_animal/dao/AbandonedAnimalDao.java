@@ -100,6 +100,31 @@ public class AbandonedAnimalDao {
         }
     }
 
+    public String selectName(Connection conn, int abNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String sql = "select NAME from ABANDONEDANIMAL where ABNUMBER = ?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, abNumber);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("NAME");
+            }
+
+            return null;
+        } catch(SQLException e) {
+            throw new RuntimeException(e);
+        } 
+        finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
+
     private AbandonedAnimal convertAbandonedAnimal(ResultSet rs) throws SQLException {
         int abNumber = rs.getInt("ABNUMBER");
         String name = rs.getString("NAME");
