@@ -29,6 +29,7 @@ public class MemberDao {
 						rs.getString("EMAIL"),
 						rs.getString("PHONE"));
 //						toDate(rs.getTimestamp("regdate")));
+				member.setmNumber(rs.getInt("MNUMBER"));
 			}
 			return member;
 			
@@ -59,6 +60,28 @@ public class MemberDao {
 			pstmt.setString(2, member.getPw());
 			pstmt.setString(3, member.getId());
 			pstmt.executeUpdate();
+		}
+	}
+	
+	public String selectName(Connection conn, int mNumber) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select NAME from MEMBER where MNUMBER = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, mNumber);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getString("NAME");
+			}
+			return null;
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
 		}
 	}
 }
