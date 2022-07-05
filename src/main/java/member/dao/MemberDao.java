@@ -5,7 +5,6 @@ import member.model.Member;
 
 import java.sql.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class MemberDao {
 
@@ -19,6 +18,7 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			Member member = null;
+
 			if (rs.next()) {
 				member = new Member(rs.getInt("MNUMBER"),
 						rs.getString("ID"),
@@ -29,10 +29,9 @@ public class MemberDao {
 						rs.getString("EMAIL"),
 						rs.getString("PHONE"),
 						rs.getString("GRADE"));
-//						toDate(rs.getTimestamp("regdate")));
 			}
-			return member;
 			
+			return member;
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
@@ -40,6 +39,7 @@ public class MemberDao {
 	}
 
 	public void insert(Connection conn, Member mem) throws SQLException, ParseException {
+		
 		try (PreparedStatement pstmt = conn.prepareStatement("insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)")) {
 			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getPw());
@@ -62,8 +62,6 @@ public class MemberDao {
 			pstmt.setString(4, member.getEmail());
 			pstmt.setString(5, member.getId());
 			pstmt.executeUpdate();
-			
 		}
 	}
-	
 }
