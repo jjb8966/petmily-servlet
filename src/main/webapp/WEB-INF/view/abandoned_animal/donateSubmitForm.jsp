@@ -114,6 +114,15 @@ h1 {
 		<h1 id="title" class="text-center">후원하기</h1>
 		<p id="description" class="text-center"></p> <br><br>
 		
+			<div class="form-group">
+                <label id="name-label">후원받을 동물</label> <input id="name"
+                    type="name" name="name" class="form-control" value="${animalName}" readonly>
+            </div>
+            <div class="form-group">
+                <label id="name-label">이름</label> <input id="name" type="name"
+                    name="name" class="form-control" value="${memberName}" readonly>
+            </div>
+		
 		<form name="donaform" id="survey-form" method="post"
 			action="/abandoned_animal/auth/donate.do?abNumber=${param.abNumber}">
 			<div class="form-row">
@@ -177,7 +186,7 @@ h1 {
 					<input id="blank" name="donaSum" onclick="doOpenCheck(this);"
 						type="text" placeholder="직접 입력" /> 원
 				</div>
-			</div><br><br>
+				</div><br><br>
 			
 			<div class="arr">
 				<button id="submit" type="submit" class="btn btn-secondary">후원하기</button>
