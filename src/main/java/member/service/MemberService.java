@@ -21,17 +21,21 @@ public class MemberService {
 
 	public void changePassword(String userId, String curPwd, String newPwd) throws ParseException {
 		Connection conn = null;
+		
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
 
 			Member member = memberDao.selectById(conn, userId);
+			
 			if (member == null) {
 				throw new MemberNotFoundException();
 			}
+			
 			if (!member.matchPw(curPwd)) {
 				throw new InvalidPasswordException();
 			}
+			
 			member.changePw(newPwd);
 			memberDao.update(conn, member);
 			conn.commit();
@@ -45,11 +49,13 @@ public class MemberService {
 
 	public void join(JoinRequest joinReq) throws ParseException {
 		Connection conn = null;
+		
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
 
 			Member member = memberDao.selectById(conn, joinReq.getId());
+			
 			if (member != null) {
 				JdbcUtil.rollback(conn);
 				throw new DuplicateIdException();
@@ -100,6 +106,7 @@ public class MemberService {
 
 	public void changeMemberInfo(String id, Member member) throws ParseException {
 		Connection conn = null;
+		
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
@@ -116,5 +123,4 @@ public class MemberService {
 			JdbcUtil.close(conn);
 		}
 	}
-
 }
