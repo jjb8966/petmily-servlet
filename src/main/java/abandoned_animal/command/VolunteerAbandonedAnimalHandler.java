@@ -44,6 +44,10 @@ public class VolunteerAbandonedAnimalHandler implements CommandHandler {
 
 		String animalName = volunteerService.findAnimalName(abNumber);
 		String memberName = volunteerService.findMemberName(mNumber);
+		String memberBirth = volunteerService.findMemberBirth(mNumber);
+		String memberPhone = volunteerService.findMemberPhone(mNumber);
+		String memberEmail = volunteerService.findMemberEmail(mNumber);
+		
 
 		if (animalName != null) {
 			req.setAttribute("animalName", animalName);
@@ -53,6 +57,18 @@ public class VolunteerAbandonedAnimalHandler implements CommandHandler {
 
 		if (memberName != null) {
 			req.setAttribute("memberName", memberName);
+		}
+		
+		if (memberBirth != null) {
+			req.setAttribute("memberBirth", memberBirth);
+		}
+		
+		if (memberPhone != null) {
+			req.setAttribute("memberPhone", memberPhone);
+		}
+		
+		if (memberEmail != null) {
+			req.setAttribute("memberEmail", memberEmail);
 		}
 		
 		return FORM_VIEW;
@@ -81,19 +97,16 @@ public class VolunteerAbandonedAnimalHandler implements CommandHandler {
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("errors", errors);
 
-		if (!errors.isEmpty()) {
-			return FORM_VIEW;
-		}
-
-		try {
-			volunteerService.volunteer(volunteerApplySubmitForm);
-			req.setAttribute("abNumber", abNumber);
-
-			return "/WEB-INF/view/abandoned_animal/submitSuccess.jsp";
-		} catch (DuplicateIdException e) {
-			errors.put("duplicateId", Boolean.TRUE);
-
-			return FORM_VIEW;
-		}
+		
+		  if (!errors.isEmpty()) { return FORM_VIEW; }
+		  
+		  try { volunteerService.volunteer(volunteerApplySubmitForm);
+		  req.setAttribute("abNumber", abNumber);
+		  
+		  return "/WEB-INF/view/abandoned_animal/submitSuccess.jsp"; } catch
+		  (DuplicateIdException e) { errors.put("duplicateId", Boolean.TRUE);
+		  
+		  return FORM_VIEW; }
+		 
 	}
 }
