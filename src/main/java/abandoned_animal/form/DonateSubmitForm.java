@@ -1,6 +1,5 @@
 package abandoned_animal.form;
 
-// db에 입력할 객체. 둘 사이의 정보가 항상 일치하지 않으므로 (default, null, not null...) 적절히 초기화
 public class DonateSubmitForm {
 
 	private int abNumber;
@@ -19,7 +18,6 @@ public class DonateSubmitForm {
 		this.accountHolder = accountHolder;
 		this.accountNumber = accountNumber;
 	}
-	
 
 	public int getAbNumber() {
 		return abNumber;
