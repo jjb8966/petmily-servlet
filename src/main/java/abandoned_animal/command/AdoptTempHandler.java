@@ -37,18 +37,18 @@ public class AdoptTempHandler implements CommandHandler {
 
 		int mNumber = user.getmNumber();
 		int abNumber = Integer.parseInt(req.getParameter("abNumber"));
-		
+
 		String memberName = adoptTempService.findMemberName(mNumber);
 		String animalName = adoptTempService.findAnimalName(abNumber);
 
 		if (animalName != null) {
 			req.setAttribute("animalName", animalName);
 		}
-		
+
 		if (memberName != null) {
 			req.setAttribute("memberName", memberName);
 		}
-		
+
 		return FORM_VIEW;
 	}
 
@@ -58,22 +58,15 @@ public class AdoptTempHandler implements CommandHandler {
 		User user = (User) userObj;
 
 		int mNumber = user.getmNumber();
-//		int abNumber = Integer.parseInt(req.getParameter("abNumber"));
-//      String abNumberVal = req.getParameter("abNumber");
-//      int abNumber = 1;
-//
-//      if (abNumberVal != null) {
-//          abNumber = Integer.parseInt(abNumberVal);
-//      }
-		
+
 		String abNumberVal = req.getParameter("abNumber");
 		int abNumber = 1;
-		if(abNumberVal != null) {
+
+		if (abNumberVal != null) {
 			abNumber = Integer.parseInt(abNumberVal);
 		}
-		
+
 		String adoptOrTemp = req.getParameter("adoptOrTemp");
-		// adoptOrTemp = req.getParameter("adoptOrTemp");
 		String residence = req.getParameter("residence");
 		String maritalStatus = req.getParameter("maritalStatus");
 		String job = req.getParameter("job");
@@ -88,52 +81,16 @@ public class AdoptTempHandler implements CommandHandler {
 		AdoptTempSubmitForm adoptTempSubmitForm = new AdoptTempSubmitForm(mNumber, abNumber, residence, maritalStatus,
 				job);
 
-		try {
-			if (adoptOrTemp.equals("adopt")) {
-				adoptTempService.adopt(adoptTempSubmitForm);
-			}
-
-			if (adoptOrTemp.equals("temp")) {
-				adoptTempService.tempProtect(adoptTempSubmitForm);
-			}
-
-			req.setAttribute("abNumber", abNumber);
-
-			return "/WEB-INF/view/abandoned_animal/submitSuccess.jsp";
-		} finally {
-
+		if (adoptOrTemp.equals("adopt")) {
+			adoptTempService.adopt(adoptTempSubmitForm);
 		}
+
+		if (adoptOrTemp.equals("temp")) {
+			adoptTempService.tempProtect(adoptTempSubmitForm);
+		}
+
+		req.setAttribute("abNumber", abNumber);
+
+		return "/WEB-INF/view/abandoned_animal/submitSuccess.jsp";
 	}
-
-//   @Override
-//   public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-//       String abNumberVal = req.getParameter("abNumber");
-//       int abNumber = 1;
-// 
-//       if (abNumberVal != null) {
-//           abNumber = Integer.parseInt(abNumberVal);
-//       }
-// 
-//       AbandonedAnimalDetailForm detailForm = abandonedAnimalService.getDetailForm(abNumber);
-//       req.setAttribute("detailForm", detailForm);
-// 
-//       return "/WEB-INF/view/abandoned_animal/adoptAndTemp.jsp";
-//   }
-
-//        LoginService loginService = new LoginService();
-//        String id = trim(req.getParameter("id"));
-//        String password = trim(req.getParameter("pw"));
-//        User authUser = (User) req.getSession().getAttribute("authUser");
-//        
-//        if (authUser != null) {
-//        	return FORM_VIEW;
-//        } else {
-//        	res.sendRedirect(req.getContextPath() + "/login.do");
-//        	return null;
-//        }
-//  
-//	private String trim(String str) {
-//		return str == null ? null : str.trim();
-//	}
-
 }
