@@ -21,7 +21,6 @@ public class Member {
 		this.phone = phone;
 		this.id = id;
 	}
-
 	
 	public Member(int mNumber, String id, String pw, String name, Date birth, String gender, String email, String phone, String grade) {
 		this.mNumber = mNumber;
@@ -41,8 +40,6 @@ public class Member {
 				+ ", gender=" + gender + ", email=" + email + ", phone=" + phone + ", grade=" + grade + "]";
 	}
 
-
-	// insert瑜� �쐞�븳 �깮�꽦�옄
 	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone) {
 		this.id = id;
 		this.pw = pw;
