@@ -99,6 +99,31 @@ public class AbandonedAnimalDao {
             JdbcUtil.close(stmt);
         }
     }
+    
+    public int selectsNumber(Connection conn, int abNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+    
+        String sql = "select SNUMBER from ABANDONEDANIMAL where ABNUMBER = ?";
+        
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, abNumber);
+            rs = pstmt.executeQuery();
+            
+            if(rs.next()){
+                return rs.getInt("SNUMBER");
+            }
+            
+            return 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } 
+        finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 
     private AbandonedAnimal convertAbandonedAnimal(ResultSet rs) throws SQLException {
         int abNumber = rs.getInt("ABNUMBER");
@@ -116,5 +141,29 @@ public class AbandonedAnimalDao {
 //                toDate(rs.getTimestamp("regdate")),
 //                toDate(rs.getTimestamp("moddate")),
 //                rs.getInt("read_cnt"));
+    }
+
+    public String selectName(Connection conn, int abNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String sql = "select Name from ABANDONEDANIMAL where ABNUMBER = ?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, abNumber);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("NAME");
+            }
+
+            return null;
+        } catch(SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
     }
 }
