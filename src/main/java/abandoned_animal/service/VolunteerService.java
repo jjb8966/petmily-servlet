@@ -23,7 +23,7 @@ public class VolunteerService {
 		try {
 			conn = ConnectionProvider.getConnection();
 			int sNumber = abandonedAnimalDao.selectsNumber(conn, abNumber);
-			
+
 			return sNumber;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -65,16 +65,73 @@ public class VolunteerService {
 
 	public String findMemberName(int mNumber) {
 		Connection conn = null;
-		
+
 		try {
 			conn = ConnectionProvider.getConnection();
 			String MemberName = memberDao.selectName(conn, mNumber);
-			
+
 			return MemberName;
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		}finally {
+		} finally {
 			JdbcUtil.close(conn);
 		}
 	}
+	
+	public String findMemberBirth(int mNumber) {
+		Connection conn = null;
+
+		try {
+			conn = ConnectionProvider.getConnection();
+			String MemberBirth = memberDao.selectBirth(conn, mNumber);
+
+			return MemberBirth;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
+	
+	public String findMemberPhone(int mNumber) {
+		Connection conn = null;
+
+		try {
+			conn = ConnectionProvider.getConnection();
+			String MemberPhone = memberDao.selectPhone(conn, mNumber);
+
+			return MemberPhone;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
+	
+	public String findMemberEmail(int mNumber) {
+		Connection conn = null;
+
+		try {
+			conn = ConnectionProvider.getConnection();
+			String MemberEmail = memberDao.selectEmail(conn, mNumber);
+
+			return MemberEmail;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
+
+	/*
+	 * public String findMemberInfo(int mNumber) { Connection conn = null;
+	 * 
+	 * try { conn = ConnectionProvider.getConnection(); String MemberName =
+	 * memberDao.selectName(conn, mNumber); String Memberbirth =
+	 * memberDao.selectbirth(conn, mNumber);
+	 * 
+	 * return MemberName; } catch (SQLException e) { throw new RuntimeException(e);
+	 * } finally { JdbcUtil.close(conn); } }
+	 */
+
 }
