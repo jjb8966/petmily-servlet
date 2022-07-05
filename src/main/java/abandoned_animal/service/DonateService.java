@@ -2,7 +2,6 @@ package abandoned_animal.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
 import abandoned_animal.dao.DonationDao;
 import abandoned_animal.form.DonateSubmitForm;
 import abandoned_animal.model.Donation;
