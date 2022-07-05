@@ -57,6 +57,12 @@ textarea {
 	margin-top: 25px;
 }
 
+.arr {
+	margin: auto;
+	display: block;
+	width: 100px;
+}
+
 h1 {
 	font-weight: 400;
 	font-family: 'Merriweather', serif
@@ -105,7 +111,8 @@ h1 {
 
 			<div class="form-group">
 				<label id="name-label">* 가족이 될 동물</label> <input id="name"
-					type="name" name="name" class="form-control" value=${animalName
+					type="name" name="name" class="form-control"
+					value=${animalName
 					} readonly>
 			</div>
 
@@ -184,11 +191,13 @@ h1 {
 			</div>-->
 
 			<br />
-
-			<div>
+			<br />
+			<div class="arr">
 				<button id="submit" type="submit" class="btn btn-secondary"
-					style="float: right">제출</button>
+					style="float: center">제출</button>
 			</div>
+			<br />
+			<br />
 
 			<!-- 폼 참고 -->
 			<!-- <div class="col">
@@ -271,15 +280,6 @@ h1 {
 					style="float: right">Submit</button>
 			</div> -->
 		</form>
-	</div>
-
-	<div>
-		<footer>
-			<h3 style="color: black;">
-				Made by Jeet Gohil <a href="https://www.freecodecamp.org/jeetgohil"
-					class="fab fa-free-code-camp"></a>
-			</h3>
-		</footer>
 	</div>
 	<!-- servey form end -->
 
