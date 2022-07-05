@@ -28,6 +28,23 @@ public class DonateAbandonedAnimalHandler implements CommandHandler {
 	}
 
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
+		HttpSession session = req.getSession(false);
+		Object userObj = session.getAttribute("authUser");
+		User user = (User) userObj;
+		
+		int mNumber = user.getmNumber();
+		int abNumber = Integer.parseInt(req.getParameter("abNumber"));
+		String animalName = donateService.findAnimalName(abNumber);
+		String memberName = donateService.findMemberName(mNumber);
+		
+		if (animalName != null) {
+			req.setAttribute("animalName", animalName);
+		}
+		
+		if (memberName != null) {
+			req.setAttribute("memberName", memberName);
+		}
+		
 		return FORM_VIEW;
 	}
 
