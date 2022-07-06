@@ -8,7 +8,6 @@ import abandoned_animal.dao.AdoptTempDao;
 import abandoned_animal.form.AdoptTempSubmitForm;
 import abandoned_animal.model.Adopt;
 import abandoned_animal.model.TempPet;
-import jdbc.JdbcUtil;
 import jdbc.connection.ConnectionProvider;
 import member.dao.MemberDao;
 
@@ -19,10 +18,7 @@ public class AdoptTempService {
 	private MemberDao memberDao = new MemberDao();
 
 	public void adopt(AdoptTempSubmitForm adoptTempSubmitForm) {
-		Connection conn = null;
-
-		try {
-			conn = ConnectionProvider.getConnection();
+		try (Connection conn = ConnectionProvider.getConnection()) {
 			conn.setAutoCommit(false);
 
 			Adopt adopt = toAdopt(adoptTempSubmitForm);
@@ -30,18 +26,12 @@ public class AdoptTempService {
 
 			conn.commit();
 		} catch (SQLException e) {
-			JdbcUtil.rollback(conn);
 			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(conn);
 		}
 	}
 
 	public void tempProtect(AdoptTempSubmitForm adoptTempSubmitForm) {
-		Connection conn = null;
-
-		try {
-			conn = ConnectionProvider.getConnection();
+		try (Connection conn = ConnectionProvider.getConnection()) {
 			conn.setAutoCommit(false);
 
 			TempPet tempPet = toTempPet(adoptTempSubmitForm);
@@ -49,40 +39,27 @@ public class AdoptTempService {
 
 			conn.commit();
 		} catch (SQLException e) {
-			JdbcUtil.rollback(conn);
 			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(conn);
 		}
 	}
 
 	public String findAnimalName(int abNumber) {
-		Connection conn = null;
-
-		try {
-			conn = ConnectionProvider.getConnection();
+		try (Connection conn = ConnectionProvider.getConnection()) {
 			String animalName = abandonedAnimalDao.selectName(conn, abNumber);
 
 			return animalName;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(conn);
 		}
 	}
 
 	public String findMemberName(int mNumber) {
-		Connection conn = null;
-
-		try {
-			conn = ConnectionProvider.getConnection();
+		try (Connection conn = ConnectionProvider.getConnection()) {
 			String memberName = memberDao.selectName(conn, mNumber);
 
 			return memberName;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(conn);
 		}
 	}
 
