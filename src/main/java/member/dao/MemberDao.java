@@ -38,7 +38,6 @@ public class MemberDao {
 		}
 	}
 
-
 	public void insert(Connection conn, Member mem){
 		PreparedStatement pstmt = null;
 		String sql = "insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)";
@@ -76,7 +75,7 @@ public class MemberDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
-	
+
 	public String selectName(Connection conn, int mNumber) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -100,4 +99,76 @@ public class MemberDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
+
+	public String selectBirth(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String sql = "select BIRTH from MEMBER where MNUMBER = ?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("BIRTH");
+            }
+
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
+
+    public String selectPhone(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String sql = "select PHONE from MEMBER where MNUMBER = ?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("PHONE");
+            }
+
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
+
+    public String selectEmail(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        String sql = "select EMAIL from MEMBER where MNUMBER = ?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("EMAIL");
+            }
+
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 }

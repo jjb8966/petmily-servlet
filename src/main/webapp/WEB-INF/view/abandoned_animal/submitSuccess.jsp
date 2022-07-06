@@ -3,4 +3,3 @@
 	alert("신청이 완료되었습니다.");
 	location.href="/abandoned_animal/detail.do?abNumber=${param.abNumber}";
 </script>
-
