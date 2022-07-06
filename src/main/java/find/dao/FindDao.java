@@ -13,7 +13,7 @@ import java.util.List;
 
 public class FindDao {
 
-    public List<FindIndexForm> selectIndex(Connection conn, int start, int end) throws SQLException {
+    public List<FindIndexForm> selectIndex(Connection conn, int start, int end) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
@@ -38,13 +38,15 @@ public class FindDao {
             }
 
             return result;
+        } catch(SQLException e) {
+            throw new RuntimeException();
         } finally {
             JdbcUtil.close(rs);
             JdbcUtil.close(pstmt);
         }
     }
 
-    public FindInForm selectOneAnimal(Connection conn, int faNumber) throws SQLException {
+    public FindInForm selectOneAnimal(Connection conn, int faNumber) {
         Statement stmt = null;
         ResultSet rs = null;
 
@@ -57,6 +59,9 @@ public class FindDao {
             return makeInForm(rs);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(stmt);
         }
     }
 
@@ -93,7 +98,7 @@ public class FindDao {
         return new FindIndexForm(faNumber, name, species, kind, location, state, img, wrTime, title);
     }
 
-    public int selectCount(Connection conn) throws SQLException {
+    public int selectCount(Connection conn) {
         Statement stmt = null;
         ResultSet rs = null;
 
@@ -106,16 +111,17 @@ public class FindDao {
             }
 
             return 0;
+        } catch(SQLException e) {
+            throw new RuntimeException();
         } finally {
             JdbcUtil.close(rs);
             JdbcUtil.close(stmt);
         }
     }
 
-    public Find insert(Connection conn, Find find) throws SQLException {
+    public Find insert(Connection conn, Find find) {
         PreparedStatement pstmt = null;
-        Statement stmt = null;
-        ResultSet rs = null;
+
         try {
             pstmt = conn.prepareStatement("insert into FINDANIMALBOARD "
                     + "(mnumber, species, kind, location, imgPath, title, content) "
@@ -130,16 +136,15 @@ public class FindDao {
             pstmt.executeUpdate();
 
             return new Find(find.getFaNumber(), find.getmNumber(), find.getSpecies(), find.getKind(), find.getLocation(), find.getAnimalState(), find.getImgPath(), find.getWrTime(), find.getTitle(), find.getContent());
+        } catch(SQLException e) {
+            throw new RuntimeException(e);
         } finally {
-            JdbcUtil.close(rs);
-            JdbcUtil.close(stmt);
             JdbcUtil.close(pstmt);
         }
     }
 
     public Find update(Connection conn, Find find) {
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
 
         try {
             pstmt = conn.prepareStatement("update FINDANIMALBOARD set"
@@ -158,28 +163,25 @@ public class FindDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            JdbcUtil.close(rs);
             JdbcUtil.close(pstmt);
         }
     }
 
-    public void delete(Connection conn, int faNumber) throws SQLException {
+    public void delete(Connection conn, int faNumber) {
         PreparedStatement pstmt = null;
-        Statement stmt = null;
-        ResultSet rs = null;
 
         try {
             pstmt = conn.prepareStatement("delete from FINDANIMALBOARD where faNumber = ?");
             pstmt.setInt(1, faNumber);
             pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         } finally {
-            JdbcUtil.close(rs);
-            JdbcUtil.close(stmt);
             JdbcUtil.close(pstmt);
         }
     }
 
-    public FindWriteForm selectFindWriteForm(Connection conn, int faNumber) throws SQLException {
+    public FindWriteForm selectFindWriteForm(Connection conn, int faNumber) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
@@ -198,6 +200,8 @@ public class FindDao {
             }
 
             return fwf;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         } finally {
             JdbcUtil.close(rs);
             JdbcUtil.close(pstmt);
