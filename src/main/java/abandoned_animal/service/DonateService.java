@@ -28,39 +28,43 @@ public class DonateService {
 				);
 
 		try (Connection conn = ConnectionProvider.getConnection()) {
+			conn.setAutoCommit(false);
+			
 			donationDao.insert(conn, donation);
+			
+			conn.commit();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
 	
 	public String findAnimalName(int abNumber) {
-		Connection conn = null;
 		
-		try {
-			conn = ConnectionProvider.getConnection();
+		try (Connection conn = ConnectionProvider.getConnection()){
+			conn.setAutoCommit(false);
+			
 			String animalName = abandonedAnimalDao.selectName(conn, abNumber);
+			
+			conn.commit();
 			
 			return animalName;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(conn);
-		}
+		} 
 	}
 	
 	public String findMemberName(int mNumber) {
-		Connection conn = null;
 
-		try {
-			conn = ConnectionProvider.getConnection();
+		try (Connection conn = ConnectionProvider.getConnection()){
+			conn.setAutoCommit(false);
+			
 			String memberName = memberDao.selectName(conn, mNumber);
 
+			conn.commit();
+			
 			return memberName;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(conn);
-		}
+		} 
 	}
 }
