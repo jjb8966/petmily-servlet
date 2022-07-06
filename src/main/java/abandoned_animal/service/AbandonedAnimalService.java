@@ -17,37 +17,31 @@ public class AbandonedAnimalService {
 
     public AbandonedAnimalDetailForm getDetailForm(int abNumber) {
         try (Connection conn = ConnectionProvider.getConnection()) {
+        	conn.setAutoCommit(false);
+        	
             AbandonedAnimalDetailForm detailForm = abandonedAnimalDao.selectOneAnimal(conn, abNumber);
 
+            conn.commit();
+            
             return detailForm;
-//            List<AbandonedAnimal> content = abandonedAnimalDao.selectIndex(conn, (pageNo - 1) * size, size);
-//
-//            return new AbandonedAnimalPage(total, pageNo, size, content);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+    
 
     public AbandonedAnimalPage getAbandonedAnimalPage(int pageNo) {
-        try (Connection conn = ConnectionProvider.getConnection()) {
+        try (Connection conn = ConnectionProvider.getConnection()) { 
+        	conn.setAutoCommit(false);
+        	
             int total = abandonedAnimalDao.selectCount(conn);
             List<AbandonedAnimal> content = abandonedAnimalDao.selectIndex(conn, (pageNo - 1) * size, size);
+            
+            conn.commit();
 
             return new AbandonedAnimalPage(total, pageNo, size, content);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
-//    public ArticlePage getArticlePage(int pageNum) {
-//        try (Connection conn = ConnectionProvider.getConnection()) {
-//            int total = articleDao.selectCount(conn);
-//            List<Article> content = articleDao.select(conn, (pageNum - 1) * size, size);
-//
-//            return new ArticlePage(total, pageNum, size, content);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-
 }
