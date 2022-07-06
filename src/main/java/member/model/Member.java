@@ -14,18 +14,6 @@ public class Member {
 	private String phone;
 	private String grade;
 
-	public Member(int mNumber, String id, String pw, String name, Date birth, String gender, String email, String phone, String grade) {
-		this.mNumber = mNumber;
-		this.gender = gender;
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.grade = grade;
-		this.birth = birth;
-	}
-
 	// insert를 위한 생성자
 	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone) {
 		this.id = id;
@@ -99,6 +87,14 @@ public class Member {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 
 	public boolean matchPw(String pwd) {

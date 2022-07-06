@@ -1,6 +1,5 @@
 package member.command;
 
-import abandoned_animal.service.AbandonedAnimalPage;
 import auth.service.LoginFailException;
 import auth.service.User;
 import member.dao.MemberDao;
