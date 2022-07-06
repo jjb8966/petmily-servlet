@@ -163,7 +163,7 @@
                     <div class="media-body p-4">
                         <h3 class="heading">임시보호하기</h3>
                         <p>보호가 필요한 동물입니다...</p>
-                        <a href="/member/temporary_protection.do" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+                        <a href="/abandoned_anima/temporary_protection.do" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
                     </div>
                 </div>
             </div>
@@ -173,10 +173,14 @@
                         <span class="flaticon-grooming"></span>
                     </div>
                     <div class="media-body p-4">
-                        <h3 class="heading">입양하기</h3>
-                        <p>입양해주세요.</p>
-                        <a href="/member/adopt.do" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
-                    </div>
+                        <h3 class="heading">봉사하기</h3>
+                        <p>봉사해주세요.</p>
+							<a
+								href="/abandoned_animal/volunteer.do?abNumber=${param.abNumber}"
+								class="btn-custom d-flex align-items-center justify-content-center"><span
+								class="fa fa-chevron-right"></span><i class="sr-only">Read
+									more</i></a>
+						</div>
                 </div>
             </div>
         </div>
