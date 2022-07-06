@@ -54,7 +54,6 @@
                                 <div><a href="#">작성자: ${find.name}</a></div>
                                 <br/>
                                 <div><a href="#">${find.wrTime}</a></div>
-                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
                                 <br/>
                                 <div><a href="#">상태: ${find.animalState}</a></div>
                             </div>
