@@ -28,6 +28,7 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 			return processSubmit(req, res);
 		} else {
 			res.sendError(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
+			
 			return null;
 		}
 	}
@@ -37,7 +38,8 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 		String id = user.getId();
 
         MemberInfo memberInfo = memberService.findById(id);
-        req.setAttribute("memberInfo", memberInfo);	
+        req.setAttribute("memberInfo", memberInfo);
+        
 		return FORM_VIEW;
 	}
 
@@ -46,6 +48,7 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 		String id = user.getId();
 
         MemberInfo memberInfo = memberService.findById(id);
+
         req.setAttribute("memberInfo", memberInfo);	
 
 		Map<String, Boolean> errors = new HashMap<>();
@@ -57,6 +60,7 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 		String phone = req.getParameter("phone");
 		Member newMemberInfo =new Member(pw,name,email,phone,id);
 
+			
 		if (!errors.isEmpty()) {
 			return FORM_VIEW;
 		}
@@ -64,9 +68,10 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 		try {
 			memberService.changeMemberInfo(user.getId(), newMemberInfo);
 			User newUser=new User(user.getId(),name);
+			
 	        MemberInfo updateInfo = memberService.findById(id);
-	        
 	        req.setAttribute("memberInfo", updateInfo);
+			
 			req.getSession().setAttribute("authUser", newUser);
 			
 			return "/WEB-INF/view/member/mypage.jsp";
