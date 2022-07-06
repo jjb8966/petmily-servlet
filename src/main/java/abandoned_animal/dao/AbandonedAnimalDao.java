@@ -1,7 +1,7 @@
 package abandoned_animal.dao;
 
+import abandoned_animal.form.AbandonedAnimalDetailForm;
 import abandoned_animal.model.AbandonedAnimal;
-import abandoned_animal.service.ListAbandonedAnimalService;
 import jdbc.JdbcUtil;
 
 import java.sql.*;
@@ -10,72 +10,160 @@ import java.util.List;
 
 public class AbandonedAnimalDao {
 
-    public List<AbandonedAnimal> selectIndex(Connection conn, int start, int end) throws SQLException {
-        PreparedStatement pstmt = null;
-//        Statement statement = null;
-        ResultSet rs = null;
+	public AbandonedAnimalDetailForm selectOneAnimal(Connection conn, int abNumber) {
+		Statement stmt = null;
+		ResultSet rs = null;
 
-        String sql = "select NAME, LOCATION, ADMISSIONDATE, IMGPATH " +
-                "FROM " +
-                "(select rownum, NAME, LOCATION, ADMISSIONDATE, IMGPATH from ABANDONEDANIMAL) " +
-                "where rownum between ? and ?";
+		String sql = "select * from ABANDONEDANIMAL where ABNUMBER =" + abNumber;
 
-        try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, start);
-            pstmt.setInt(2, end);
-            rs = pstmt.executeQuery();
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 
-//            statement = conn.createStatement();
-//            rs = statement.executeQuery("select * from ABANDONEDANIMAL");
+			return makeDetailForm(rs);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-            List<AbandonedAnimal> result = new ArrayList<>();
+	private AbandonedAnimalDetailForm makeDetailForm(ResultSet rs) {
+		try {
 
-            while (rs.next()) {
-                result.add(convertAbandonedAnimal(rs));
-            }
+			while (rs.next()) {
 
-            return result;
-        } finally {
-            JdbcUtil.close(rs);
-            JdbcUtil.close(pstmt);
-//            JdbcUtil.close(statement);
-        }
-    }
+				int abNumber = rs.getInt("ABNUMBER");
+				int sNumber = rs.getInt("SNUMBER");
+				int age = rs.getInt("AGE");
+				float weight = rs.getFloat("WEIGHT");
+				String name = rs.getString("NAME");
+				String species = rs.getString("SPECIES");
+				String kind = rs.getString("KIND");
+				String gender = rs.getString("GENDER");
+				String location = rs.getString("LOCATION");
+				String uniqueness = rs.getString("UNIQUENESS");
+				String description = rs.getString("DESCRIPTION");
+				String imgPath = rs.getString("IMGPATH");
+				String animalState = rs.getString("ANIMALSTATE");
+				Date admissionDate = rs.getDate("ADMISSIONDATE");
 
-    private AbandonedAnimal convertAbandonedAnimal(ResultSet rs) throws SQLException {
-        String name = rs.getString("NAME");
-        String img = rs.getString("IMGPATH");
-        String location = rs.getString("LOCATION");
-        Date admissionDate = rs.getDate("ADMISSIONDATE");
+				return new AbandonedAnimalDetailForm(abNumber, sNumber, age, weight, name, species, kind, gender,
+						location, uniqueness, description, imgPath, animalState, admissionDate);
+			}
+			return null;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-        return new AbandonedAnimal(name, img, location, admissionDate);
-//        return new AbandonedAnimal(rs.getInt("article_no"),
-//                new Writer(
-//                        rs.getString("writer_id"),
-//                        rs.getString("writer_name")),
-//                rs.getString("title"),
-//                toDate(rs.getTimestamp("regdate")),
-//                toDate(rs.getTimestamp("moddate")),
-//                rs.getInt("read_cnt"));
-    }
+	public List<AbandonedAnimal> selectIndex(Connection conn, int start, int end) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-    public int selectCount(Connection conn) throws SQLException {
-        Statement stmt = null;
-        ResultSet rs = null;
+		String sql = "select ABNUMBER, NAME, LOCATION, ADMISSIONDATE, IMGPATH " + "FROM "
+				+ "(select rownum, ABNUMBER, NAME, LOCATION, ADMISSIONDATE, IMGPATH from ABANDONEDANIMAL) "
+				+ "where rownum between ? and ?";
 
-        try {
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery("select count(*) from ABANDONEDANIMAL");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			rs = pstmt.executeQuery();
 
-            if (rs.next()) {
-                return rs.getInt(1);
-            }
+			List<AbandonedAnimal> result = new ArrayList<>();
 
-            return 0;
-        } finally {
-            JdbcUtil.close(rs);
-            JdbcUtil.close(stmt);
-        }
-    }
+			while (rs.next()) {
+				result.add(convertAbandonedAnimal(rs));
+			}
+
+			return result;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
+
+	public int selectCount(Connection conn) {
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("select count(*) from ABANDONEDANIMAL");
+
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+
+			return 0;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(stmt);
+		}
+	}
+
+	public int selectsNumber(Connection conn, int abNumber) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select SNUMBER from ABANDONEDANIMAL where ABNUMBER = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, abNumber);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				return rs.getInt("SNUMBER");
+			}
+
+			return 0;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
+
+	private AbandonedAnimal convertAbandonedAnimal(ResultSet rs) {
+		try {
+			int abNumber = rs.getInt("ABNUMBER");
+			String name = rs.getString("NAME");
+			String img = rs.getString("IMGPATH");
+			String location = rs.getString("LOCATION");
+			Date admissionDate = rs.getDate("ADMISSIONDATE");
+
+			return new AbandonedAnimal(abNumber, name, img, location, admissionDate);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public String selectName(Connection conn, int abNumber) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select Name from ABANDONEDANIMAL where ABNUMBER = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, abNumber);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				return rs.getString("NAME");
+			}
+
+			return null;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
 }

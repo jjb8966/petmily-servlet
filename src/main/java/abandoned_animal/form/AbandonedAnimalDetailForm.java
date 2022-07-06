@@ -1,40 +1,40 @@
-package abandoned_animal.model;
+package abandoned_animal.form;
 
-import java.sql.Blob;
 import java.sql.Date;
 
-public class AbandonedAnimal {
+public class AbandonedAnimalDetailForm {
 
-    private char gender;
     private int abNumber;
-    private int sNumber;
+    private int sNumber;    // 보호소 번호
     private int age;
     private float weight;
     private String name;
     private String species;
     private String kind;
+    private String gender;
     private String location;
     private String uniqueness;
     private String description;
-    private String animalState;
     private String imgPath;
+    private String animalState;
     private Date admissionDate;
-    private Blob video;
+    //    private Blob video;
 
-    public AbandonedAnimal(int abNumber,String name, String img, String location, Date admissionDate) {
+    public AbandonedAnimalDetailForm(int abNumber, int sNumber, int age, float weight, String name, String species, String kind, String gender, String location, String uniqueness, String description, String imgPath, String animalState, Date admissionDate) {
         this.abNumber = abNumber;
+        this.sNumber = sNumber;
+        this.age = age;
+        this.weight = weight;
         this.name = name;
-        this.imgPath = img;
-        this.location = location;
-        this.admissionDate = admissionDate;
-    }
-
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
+        this.species = species;
+        this.kind = kind;
         this.gender = gender;
+        this.location = location;
+        this.uniqueness = uniqueness;
+        this.description = description;
+        this.imgPath = imgPath;
+        this.animalState = animalState;
+        this.admissionDate = admissionDate;
     }
 
     public int getAbNumber() {
@@ -93,12 +93,28 @@ public class AbandonedAnimal {
         this.kind = kind;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getLocation() {
         return location;
     }
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Date getAdmissionDate() {
+        return admissionDate;
+    }
+
+    public void setAdmissionDate(Date admissionDate) {
+        this.admissionDate = admissionDate;
     }
 
     public String getUniqueness() {
@@ -117,35 +133,19 @@ public class AbandonedAnimal {
         this.description = description;
     }
 
-    public String getAnimalState() {
-        return animalState;
-    }
-
-    public void setAnimalState(String animalState) {
-        this.animalState = animalState;
-    }
-
-    public Date getAdmissionDate() {
-        return admissionDate;
-    }
-
-    public void setAdmissionDate(Date admissionDate) {
-        this.admissionDate = admissionDate;
-    }
-
-    public Blob getVideo() {
-        return video;
-    }
-
-    public void setVideo(Blob video) {
-        this.video = video;
-    }
-
     public String getImgPath() {
         return imgPath;
     }
 
     public void setImgPath(String imgPath) {
         this.imgPath = imgPath;
+    }
+
+    public String getAnimalState() {
+        return animalState;
+    }
+
+    public void setAnimalState(String animalState) {
+        this.animalState = animalState;
     }
 }

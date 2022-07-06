@@ -84,11 +84,10 @@
 
         <div class="row">
             <c:forEach var="abandonedAnimal" items="${abandonedAnimals.content}">
-                <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="col-md-6 col-lg-3 ftco-animate" onclick="location.href='/abandoned_animal/detail.do?abNumber=${abandonedAnimal.abNumber}'">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch"
-                                 style="background-image: url(${abandonedAnimal.imgPath});"></div>
+                            <div class="img align-self-stretch" style="background-image: url(${abandonedAnimal.imgPath});"></div>
                         </div>
 
                         <div class="text pt-3 px-3 pb-4 text-center">

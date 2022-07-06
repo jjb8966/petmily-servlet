@@ -45,14 +45,6 @@ public class Member {
 		this.mNumber = mNumber;
 	}
 
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -77,6 +69,22 @@ public class Member {
 		this.name = name;
 	}
 
+	public Date getBirth() {
+		return birth;
+	}
+
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -91,22 +99,6 @@ public class Member {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-	public String getGrade() {
-		return grade;
-	}
-
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
-
-	public Date getBirth() {
-		return birth;
-	}
-
-	public void setBirth(Date birth) {
-		this.birth = birth;
 	}
 
 	public boolean matchPw(String pwd) {

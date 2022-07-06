@@ -1,4 +1,4 @@
-package abandoned_animal.service;
+package abandoned_animal.form;
 
 import abandoned_animal.model.AbandonedAnimal;
 
