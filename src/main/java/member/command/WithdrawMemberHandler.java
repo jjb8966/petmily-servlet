@@ -38,6 +38,7 @@ public class WithdrawMemberHandler implements CommandHandler {
         int mNumber = user.getMNumber();
 
         Map<String, Boolean> errors = new HashMap<>();
+        req.setAttribute("errors", errors);
 
         if (isEmpty(pw)) {
             errors.put("pw", Boolean.TRUE);
@@ -54,8 +55,6 @@ public class WithdrawMemberHandler implements CommandHandler {
                 errors.put("notCorrect", Boolean.TRUE);
             }
         }
-
-        req.setAttribute("errors", errors);
 
         if (!errors.isEmpty()) {
             return FORM_VIEW;

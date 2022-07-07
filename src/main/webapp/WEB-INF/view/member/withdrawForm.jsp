@@ -5,22 +5,14 @@
     <title>Petmily-Don't buy, Do Adopt</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
-          rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="../../../petsitting-master/css/animate.css">
-
     <link rel="stylesheet" href="../../../petsitting-master/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/magnific-popup.css">
-
-
     <link rel="stylesheet" href="../../../petsitting-master/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/jquery.timepicker.css">
-
     <link rel="stylesheet" href="../../../petsitting-master/css/flaticon.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/style.css">
 </head>
@@ -41,47 +33,32 @@
                         <div class="col-md-7">
                             <div class="contact-wrap w-100 p-md-5 p-4">
                                 <h3 class="mb-4">정말 탈퇴하시겠습니까?</h3>
-                                <form action="/member/withdraw.do" method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <form action="/member/withdraw.do" method="POST" id="contactForm" name="contactForm"
+                                      class="contactForm">
                                     <div class="row">
-                                        <%--                                        <div class="col-md-6">--%>
-                                        <%--                                            <div class="form-group">--%>
-                                        <%--                                                <label class="label" for="name">Full Name</label>--%>
-                                        <%--                                                <input type="text" class="form-control" name="name" id="name" placeholder="Name">--%>
-                                        <%--                                            </div>--%>
-                                        <%--                                        </div>--%>
-                                        <%--                                        <div class="col-md-6">--%>
-                                        <%--                                            <div class="form-group">--%>
-                                        <%--                                                <label class="label" for="email">Email Address</label>--%>
-                                        <%--                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">--%>
-                                        <%--                                            </div>--%>
-                                        <%--                                        </div>--%>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label">비밀번호를 입력해주세요.</label>
-                                                <input type="password" class="form-control" name="pw" placeholder="비밀번호">
-                                                <span style="color: red"> <c:if test="${errors.pw}">비밀번호를 입력해주세요</c:if></span>
+                                                <input type="password" class="form-control" name="pw"
+                                                       placeholder="비밀번호">
+                                                <span style="color: red"> <c:if
+                                                        test="${errors.pw}">비밀번호를 입력해주세요</c:if></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label">비밀번호를 확인해주세요.</label>
-                                                <input type="password" class="form-control" name="confirmPw" placeholder="비밀번호 확인">
-                                                <span style="color: red"> <c:if test="${errors.confirmPw}">비밀번호 확인을 입력해주세요</c:if></span>
+                                                <input type="password" class="form-control" name="confirmPw"
+                                                       placeholder="비밀번호 확인">
+                                                <span style="color: red"> <c:if
+                                                        test="${errors.confirmPw}">비밀번호 확인을 입력해주세요</c:if></span>
                                             </div>
                                         </div>
                                         <span style="color: red">
         	                                    <c:if test="${errors.notMatch}">비밀번호와 확인이 일치하지 않습니다.</c:if>
                                                 <c:if test="${errors.notCorrect}">비밀번호가 틀렸습니다.</c:if>
                                         </span>
-<%--                                        <div class="col-md-12">--%>
-<%--                                            <div class="form-group">--%>
-<%--                                                <label class="label" for="#">Message</label>--%>
-<%--                                                <textarea name="message" class="form-control" id="message" cols="30"--%>
-<%--                                                          rows="4" placeholder="Message"></textarea>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input type="submit" value="탈퇴하기" class="btn btn-primary">
@@ -93,7 +70,8 @@
                             </div>
                         </div>
                         <div class="col-md-5 d-flex align-items-stretch">
-                            <div class="info-wrap w-100 p-5 img" style="background-image: url(images/img.jpg);">
+                            <div class="info-wrap w-100 p-5 img"
+                                 style="background-image: url(/petsitting-master/images/img.jpg);">
                             </div>
                         </div>
                     </div>
@@ -113,7 +91,6 @@
                 stroke="#F96D00"/>
     </svg>
 </div>
-
 
 <script src="../../../petsitting-master/js/jquery.min.js"></script>
 <script src="../../../petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
