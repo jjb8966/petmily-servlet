@@ -15,13 +15,16 @@ public class LoginService {
 	public User login(String id, String pw) throws ParseException {
 		try (Connection conn = ConnectionProvider.getConnection()) {
 			Member member = memberDao.selectById(conn, id);
+
 			if (member == null) {
 				throw new LoginFailException();
 			}
+
 			if (!member.matchPw(pw)) {
 				throw new LoginFailException();
 			}
-			return new User(member.getId(), member.getName());
+
+			return new User(member.getmNumber(), member.getId(), member.getName());
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
