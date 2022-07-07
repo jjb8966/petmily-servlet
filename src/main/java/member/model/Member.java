@@ -13,31 +13,17 @@ public class Member {
 	private String email;
 	private String phone;
 	private String grade;
-	public Member(String pw, String name, String email, String phone,String id) {
-		
-		this.pw = pw;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.id = id;
-	}
-	
+
 	public Member(int mNumber, String id, String pw, String name, Date birth, String gender, String email, String phone, String grade) {
 		this.mNumber = mNumber;
-		this.gender = gender;
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
+		this.birth = birth;
+		this.gender = gender;
 		this.email = email;
 		this.phone = phone;
 		this.grade = grade;
-		this.birth = birth;
-	}
-
-	@Override
-	public String toString() {
-		return "Member [mNumber=" + mNumber + ", id=" + id + ", pw=" + pw + ", name=" + name + ", birth=" + birth
-				+ ", gender=" + gender + ", email=" + email + ", phone=" + phone + ", grade=" + grade + "]";
 	}
 
 	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone) {
@@ -46,6 +32,14 @@ public class Member {
 		this.name = name;
 		this.birth = birth;
 		this.gender = gender;
+		this.email = email;
+		this.phone = phone;
+	}
+
+	public Member(String id, String pw, String name, String email, String phone) {
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
 		this.email = email;
 		this.phone = phone;
 	}
