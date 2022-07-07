@@ -98,16 +98,10 @@ public class MemberService {
     }
 
     public void withdraw(int mNumber) {
-        Connection conn = null;
-
-        try {
-            conn = ConnectionProvider.getConnection();
-
+        try (Connection conn = ConnectionProvider.getConnection()) {
             memberDao.delete(conn, mNumber);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
         }
     }
 
@@ -117,7 +111,7 @@ public class MemberService {
         try {
             conn = ConnectionProvider.getConnection();
 
-            Member member = memberDao.selectByMNumber(conn, mNumber);
+            Member member = memberDao.selectBymNumber(conn, mNumber);
 
             if (member.getPw().equals(pw)) {
                 return true;
