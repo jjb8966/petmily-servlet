@@ -19,7 +19,7 @@ public class MemberService {
 
     private MemberDao memberDao = new MemberDao();
 
-    public void changePassword(String userId, String curPwd, String newPwd) throws ParseException {
+    public void changePassword(String userId, String curPwd, String newPwd) {
         Connection conn = null;
         try {
             conn = ConnectionProvider.getConnection();
@@ -88,8 +88,6 @@ public class MemberService {
 
             MemberInfo memberInfo = new MemberInfo(id, pw, name, birth, gender, email, phone, grade);
             return memberInfo;
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {

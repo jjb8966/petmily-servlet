@@ -11,7 +11,7 @@ import java.text.ParseException;
 
 public class MemberDao {
 
-    public Member selectById(Connection conn, String id) throws SQLException, ParseException {
+    public Member selectById(Connection conn, String id) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
@@ -34,13 +34,15 @@ public class MemberDao {
             }
 
             return member;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         } finally {
             JdbcUtil.close(rs);
             JdbcUtil.close(pstmt);
         }
     }
 
-    public Member selectBymNumber(Connection conn, int mNumber) throws SQLException {
+    public Member selectBymNumber(Connection conn, int mNumber) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
@@ -63,6 +65,8 @@ public class MemberDao {
             }
 
             return member;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         } finally {
             JdbcUtil.close(rs);
             JdbcUtil.close(pstmt);
@@ -99,6 +103,22 @@ public class MemberDao {
             pstmt.setString(1, member.getName());
             pstmt.setString(2, member.getPw());
             pstmt.setString(3, member.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(pstmt);
+        }
+    }
+
+    public void delete(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+
+        String sql = "delete MEMBER where MNUMBER=?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

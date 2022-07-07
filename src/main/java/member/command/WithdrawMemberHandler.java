@@ -35,7 +35,7 @@ public class WithdrawMemberHandler implements CommandHandler {
         String pw = req.getParameter("pw");
         String confirmPw = req.getParameter("confirmPw");
         User user = (User) req.getSession().getAttribute("authUser");
-        int mNumber = user.getMNumber();
+        int mNumber = user.getmNumber();
 
         Map<String, Boolean> errors = new HashMap<>();
         req.setAttribute("errors", errors);
