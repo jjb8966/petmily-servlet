@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import auth.service.User;
 import board.form.WriteBoardForm;
-import board.service.WriteBoardService;
+import board.service.BoardService;
 import mvc.command.CommandHandler;
 
 public class WriteBoardHandler implements CommandHandler {
 	
 	private static final String FORM_VIEW = "/WEB-INF/view/board/writeBoardForm.jsp";
-	private WriteBoardService writeBoardService = new WriteBoardService();
+	private BoardService boardService = new BoardService();
 	
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) {
@@ -42,14 +42,13 @@ public class WriteBoardHandler implements CommandHandler {
 		WriteBoardForm writeReq = writeBoardRequest(user, req);
 		writeReq.validate(errors);	
 		
-        writeBoardService.write(writeReq);
+		boardService.write(writeReq);
         req.setAttribute("kindOfBoard", kindOfBoard);
 
 		return "/WEB-INF/view/board/writeBoardSuccess.jsp";
 	}
 
 	private WriteBoardForm writeBoardRequest(User user, HttpServletRequest req) {
-		
 		return new WriteBoardForm(
 				user.getmNumber(), 
 				req.getParameter("kindOfBoard"), 

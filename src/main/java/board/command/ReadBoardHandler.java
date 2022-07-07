@@ -1,17 +1,22 @@
 package board.command;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import board.exception.BoardNotFoundException;
 import board.form.ReadBoardForm;
-import board.service.BoardNotFoundException;
-import board.service.ReadBoardService;
+import board.form.ReplyForm;
+import board.service.BoardReplyService;
+import board.service.BoardService;
 import mvc.command.CommandHandler;
 
 
 public class ReadBoardHandler implements CommandHandler {
 
-	private ReadBoardService readBoardService = new ReadBoardService();
+	private BoardService boardService = new BoardService();
+	private BoardReplyService boardReplyService = new BoardReplyService();
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
@@ -19,7 +24,10 @@ public class ReadBoardHandler implements CommandHandler {
 		int bNumber = Integer.parseInt(bNumberVal);
 
 		try {
-			ReadBoardForm readBoardForm = readBoardService.getBoard(bNumber);
+			ReadBoardForm readBoardForm = boardService.getBoard(bNumber);
+			List<ReplyForm> replies = boardReplyService.getReplies(bNumber);
+			readBoardForm.setReplies(replies);
+			
 			req.setAttribute("readBoardForm", readBoardForm);
 
 			return "/WEB-INF/view/board/readBoardContent.jsp";

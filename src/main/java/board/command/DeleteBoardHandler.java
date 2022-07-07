@@ -4,14 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import auth.service.User;
-import board.service.BoardNotFoundException;
-import board.service.DeleteBoardService;
-import board.service.PermissionDeniedException;
+import board.exception.BoardNotFoundException;
+import board.exception.PermissionDeniedException;
+import board.service.BoardService;
 import mvc.command.CommandHandler;
 
 public class DeleteBoardHandler implements CommandHandler {
 
-	private DeleteBoardService deleteService = new DeleteBoardService();
+	private BoardService boardService = new BoardService();
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
@@ -24,17 +24,13 @@ public class DeleteBoardHandler implements CommandHandler {
 		int bNumber = Integer.parseInt(bNumberVal);
 
 		try {
-			deleteService.delete(bNumber, authUser);
+			boardService.delete(bNumber, authUser);
 			
 			return "/WEB-INF/view/board/deleteSuccess.jsp";
-		} catch (BoardNotFoundException e) {
+		} catch (BoardNotFoundException | PermissionDeniedException e) {
 			res.sendError(HttpServletResponse.SC_NOT_FOUND);
 			
 			return null;
-		} catch (PermissionDeniedException e) {
-			res.sendError(HttpServletResponse.SC_FORBIDDEN);
-			
-			return null;
-		}
+		} 
 	}
 }

@@ -8,19 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import auth.service.User;
+import board.exception.BoardNotFoundException;
+import board.exception.PermissionDeniedException;
 import board.form.ModifyRequest;
 import board.form.ReadBoardForm;
-import board.service.BoardNotFoundException;
-import board.service.ModifyBoardService;
-import board.service.PermissionDeniedException;
-import board.service.ReadBoardService;
+import board.service.BoardService;
 import mvc.command.CommandHandler;
 
 public class ModifyBoardHandler implements CommandHandler {
 
 	private static final String FORM_VIEW = "/WEB-INF/view/board/modifyForm.jsp";
-	private ReadBoardService readService = new ReadBoardService();
-	private ModifyBoardService modifyService = new ModifyBoardService();
+	private BoardService boardService = new BoardService();
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
@@ -39,7 +37,7 @@ public class ModifyBoardHandler implements CommandHandler {
 		try {
 			String bNumberVal = req.getParameter("bNumber");
 			int bNumber = Integer.parseInt(bNumberVal);
-			ReadBoardForm readBoardForm = readService.getBoard(bNumber);
+			ReadBoardForm readBoardForm = boardService.getBoard(bNumber);
 
 			// 로그인한 사람, 글작성자 비교 후 일치하면 수정
 			User authUser = (User) req.getSession().getAttribute("authUser");
@@ -97,18 +95,14 @@ public class ModifyBoardHandler implements CommandHandler {
 		}
 
 		try {
-			modifyService.modify(modReq);
+			boardService.modify(modReq);
 			req.setAttribute("kindOfBoard", kindOfBoard);
 
 			return "/WEB-INF/view/board/modifySuccess.jsp";
-		} catch (BoardNotFoundException e) {
+		} catch (BoardNotFoundException | PermissionDeniedException e) {
 			res.sendError(HttpServletResponse.SC_NOT_FOUND);
 
 			return null;
-		} catch (PermissionDeniedException e) {
-			res.sendError(HttpServletResponse.SC_FORBIDDEN);
-
-			return null;
-		}
+		} 
 	}
 }
