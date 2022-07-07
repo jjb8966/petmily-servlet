@@ -55,15 +55,6 @@
 <section class="ftco-section bg-light">
 	<div class="container">
 
-	<!-- content 목록, 수정, 삭제 -->
-						
-		<div class="modal-header">
-			<span>
-				<button type="button" class="btn btn-light"
-					onclick="location.href='/board/list.do?kindOfBoard=${param.kindOfBoard}'">글 목록으로</button>
-			</span>
-		</div>
-
 	<!-- content 내용 출력 -->
 		
 		<div class="card mb-2">
@@ -75,53 +66,122 @@
 					<div class="media-body ml-3">
 						<b> <span style="font-size: 2em;">${readBoardForm.title}</span> </b>
 						<h6 class="mt-1"></h6>
-						<small><a href="javascript:void(0)">by ${readBoardForm.name}</a></small>
+						<small><a href="javascript:void(0)">${readBoardForm.name}</a></small>
 						<small><i class="far fa-comment ml-2"></i> date ${readBoardForm.wrTime} </small>
 						<div class="modal-footer"></div>
 						
 					<!-- content 내용 -->
 					
-						<div class="mt-3 font-size-sm">${readBoardForm.content}</div>
+						<div class="mt-3 font-size-lg">${readBoardForm.content}</div>
 						<h1 class="mt-1"></h1>
 							
-					<!-- content 수정, 삭제 -->
-	
 						<div class="modal-header"></div>
 						<div class="modal-footer">
+	
+					<!-- content 수정, 삭제 -->
 				
 							<c:if test="${authUser.mNumber == readBoardForm.mNumber}"> 
 								<button type="button" class="btn btn-light"
-								onclick="location.href='/board/modify.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}'">수정</button>
+									onclick="location.href='/board/modify.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}'">수정</button>
 				
 								<button type="button" class="btn btn-light"
-								onclick="if(confirm('정말로 삭제하시겠습니까?')) 
-									{return location.href='/board/delete.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}';}">삭제</button>
+									onclick="if(confirm('정말로 삭제하시겠습니까?')) 
+									{return location.href='/boardReplydo/delete.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}';}">삭제</button>
 							</c:if>
-			
-						<!-- 댓글 작성하기 -->
-						
-							<div class="media forum-item">	
-								<button type="button" class="btn btn-primary" onclick="location.href='#message'">댓글 작성하기</button>
-							</div>
 							
-						</div>
-					</div>
-				</div>
-			</div>	
-		</div>	
-	</div>
+						<!-- content 목록 이동 버튼 -->
+						
+							<span>
+								<button type="button" class="btn btn-primary"
+									onclick="location.href='/board/list.do?kindOfBoard=${param.kindOfBoard}'">글 목록</button>
+							</span>	
+						
+						<!-- 댓글 작성하기 버튼 -->
+
+                            <div class="media forum-item">
+                                <button type="button" class="btn btn-primary" onclick="location.href='#message'">댓글 작성</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 댓글 리스트 -->
+
+        <c:forEach var="reply" items="${readBoardForm.replies}">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <div class="media forum-item">
+                        <div class="media-body ml-3">
+                            <a href="javascript:void(0)" class="text-secondary">${reply.name}</a>
+                            <small class="text-muted ml-2">${reply.wrTime}</small>
+                            <span style="float:right">
+								<c:if test="${authUser.mNumber == reply.mNumber}">
+                                <button class="btn btn-light" onclick="if(confirm('정말로 삭제하시겠습니까?'))
+                                        {return location.href=
+                                        '/board/replyDelete.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}&brNumber=${reply.brNumber}';}">
+                                        삭제</button>
+								</c:if>
+                            </span>
+
+                            <!-- 댓글 내용 -->
+                            
+                            <div class="mt-3 font-size-sm">
+                                <p>${reply.reply}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+
+        <!-- 댓글 작성 -->
+
+        <div class="card mb-2" id="message">
+            <div class="card-body">
+                <div class="col-md-8 col-lg-12">
+                    <div class="comment-wrapper">
+                        <div class="panel panel-info">
+                            <div class="panel-body">
+
+                                <form action="/board/reply.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}"
+                                      method="post">
+                                    <div class="form-group">
+                                        <label for="message">댓글</label>
+                                        <textarea name="reply" id="message1" cols="30" rows="3" class="form-control"
+                                                  placeholder="댓글을 작성해주세요."></textarea>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <input type="submit" value="댓글 등록" class="btn btn-primary">
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 댓글 끝 -->
+
+    </div>
 </section>
 
 <!-- 풋터 -->
 
-<%@ include file="/WEB-INF/view/include/footer.jspf"%>
+<%@ include file="/WEB-INF/view/include/footer.jspf" %>
 
 <!-- loader -->
 
 <div id="ftco-loader" class="show fullscreen">
-	<svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
     </svg>
 </div>
 
