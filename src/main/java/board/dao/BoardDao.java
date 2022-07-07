@@ -14,37 +14,44 @@ import jdbc.JdbcUtil;
 
 public class BoardDao {
 
-	public Board insert(Connection conn, Board board) throws SQLException {
+	public Board insert(Connection conn, Board board) {
 		PreparedStatement pstmt = null;
-		Statement stmt = null;
 		ResultSet rs = null;
 
+		String sql = "insert into BOARD (MNUMBER, KINDOFBOARD, TITLE, CONTENT, IMGPATH, VIDEO, WRTIME, CHECKPUBLIC)"
+				+ "values (?,?,?,?,null,null,SYSDATE,?)";
+		
 		try {
-			String sql = "insert into board (mNumber, kindOfBoard, title, content, imgPath, video, wrTime, checkPublic)"
-					+ "values (?,?,?,?,null,null,sysdate,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, board.getmNumber());
 			pstmt.setString(2, board.getKindOfBoard());
 			pstmt.setString(3, board.getTitle());
 			pstmt.setString(4, board.getContent());
 			pstmt.setString(5, board.getCheckPublic());
-			int insertedCount = pstmt.executeUpdate();
-
+			pstmt.executeUpdate();
+			
 			return null;
+		} catch(SQLException e){
+			throw new RuntimeException(e);
 		} finally {
 			JdbcUtil.close(rs);
-			JdbcUtil.close(stmt);
 			JdbcUtil.close(pstmt);
 		}
 	}
 
-	public List<ReadBoardForm> select(Connection conn, int startRow, int size, String kindOfBoard) throws SQLException {
+	public List<ReadBoardForm> select(Connection conn, int startRow, int size, String kindOfBoard) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select *" + " from (select rownum as num, a.*" + " from (select * from"
-				+ " member m inner join board b" + " on m.mnumber = b.mnumber" + " where b.kindofboard = ?"
-				+ " order by b.bnumber desc) a)" + " where num between ? and ?";
-
+		
+		String sql = "select *" 
+				+ " from (select ROWNUM as NUM, A.*" 
+				+ " from (select * from"
+				+ " MEMBER M inner join BOARD B" 
+				+ " on M.MNUMBER = B.MNUMBER" 
+				+ " where B.KINDOFBOARD = ?"
+				+ " order by B.BNUMBER desc) A)" 
+				+ " where NUM between ? and ?";
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, kindOfBoard);
@@ -59,6 +66,8 @@ public class BoardDao {
 			}
 
 			return result;
+		} catch(SQLException e){
+			throw new RuntimeException(e);
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
@@ -66,16 +75,21 @@ public class BoardDao {
 	}
 
 	private ReadBoardForm convertBoard(ResultSet rs) throws SQLException {
-
-		return new ReadBoardForm(rs.getInt("bNumber"), rs.getInt("mNumber"), rs.getString("name"),
-				rs.getString("kindOfBoard"), rs.getString("title"), rs.getString("content"), rs.getDate("wrTime"),
+		return new ReadBoardForm(
+				rs.getInt("bNumber"), 
+				rs.getInt("mNumber"), 
+				rs.getString("name"),
+				rs.getString("kindOfBoard"), 
+				rs.getString("title"), 
+				rs.getString("content"), 
+				rs.getDate("wrTime"),
 				rs.getString("checkPublic"));
 	}
 
-	public int selectCount(Connection conn, String kindOfBoard) throws SQLException {
+	public int selectCount(Connection conn, String kindOfBoard) {
 		Statement stmt = null;
 		ResultSet rs = null;
-		String sql = "select count(*) from board where kindOfBoard = '" + kindOfBoard + "'";
+		String sql = "select count(*) from BOARD where KINDOFBOARD = '" + kindOfBoard + "'";
 
 		try {
 			stmt = conn.createStatement();
@@ -86,36 +100,44 @@ public class BoardDao {
 			}
 
 			return 0;
+		} catch(SQLException e){
+			throw new RuntimeException(e);
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(stmt);
 		}
 	}
 
-	public ReadBoardForm selectByContent(Connection conn, int bNumber) throws SQLException {
+	public ReadBoardForm selectByContent(Connection conn, int bNumber) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select b.*, m.id, m.name from board b, member m where b.mnumber = m.mnumber and bNumber = ?";
+		String sql = "select B.*, M.ID, M.NAME from BOARD B, MEMBER M where B.MNUMBER = M.MNUMBER and BNUMBER = ?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bNumber);
 			rs = pstmt.executeQuery();
 			ReadBoardForm readBoardForm = null;
+			
 			if (rs.next()) {
 				readBoardForm = convertBoard(rs);
 			}
 
 			return readBoardForm;
+		} catch(SQLException e){
+			throw new RuntimeException(e);
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
 		}
 	}
 
-	public int update(Connection conn, int bNumber, String title, String content, String checkPublic) throws SQLException {
-		try (PreparedStatement pstmt = conn.prepareStatement(
-				"update board set title = ?, content = ?, checkPublic = ?, wrTime = sysdate " + "where bNumber = ?")) {
+	public int update(Connection conn, int bNumber, String title, String content, String checkPublic) {
+		PreparedStatement pstmt = null;
+		String sql = "update BOARD set TITLE = ?, CONTENT = ?, CHECKPUBLIC = ?, WRTIME = SYSDATE " + "where BNUMBER = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, title);
 			pstmt.setString(2, content);
 			pstmt.setString(3, checkPublic);
@@ -124,14 +146,24 @@ public class BoardDao {
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(pstmt);
 		}
 	}
 
-	public int delete(Connection conn, int bNumber) throws SQLException {
-		try (PreparedStatement pstmt = conn.prepareStatement("delete from board where bNumber = ?")) {
+	public int delete(Connection conn, int bNumber) {
+		PreparedStatement pstmt = null;
+		String sql = "delete from BOARD where BNUMBER = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bNumber);
 
 			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(pstmt);
 		}
 	}
 }
