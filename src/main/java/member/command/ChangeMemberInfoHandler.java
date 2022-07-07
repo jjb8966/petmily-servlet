@@ -47,27 +47,23 @@ public class ChangeMemberInfoHandler implements CommandHandler {
 		User user = (User)req.getSession().getAttribute("authUser");
 		String id = user.getId();
 
-        MemberInfo memberInfo = memberService.findById(id);
-
-        req.setAttribute("memberInfo", memberInfo);	
-
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("errors", errors);
 
-		String name = req.getParameter("name");
 		String pw = req.getParameter("pw");
+		String name = req.getParameter("name");
 		String email= req.getParameter("email");
 		String phone = req.getParameter("phone");
-		Member newMemberInfo =new Member(pw,name,email,phone,id);
 
-			
+		MemberInfo memberInfo = new MemberInfo(pw, name, email, phone);
+
 		if (!errors.isEmpty()) {
 			return FORM_VIEW;
 		}
 		
 		try {
-			memberService.changeMemberInfo(user.getId(), newMemberInfo);
-			User newUser=new User(user.getId(),name);
+			memberService.changeMemberInfo(id, memberInfo);
+			User newUser=new User(user.getmNumber(), user.getId(),name);
 			
 	        MemberInfo updateInfo = memberService.findById(id);
 	        req.setAttribute("memberInfo", updateInfo);
