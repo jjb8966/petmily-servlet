@@ -1,6 +1,7 @@
 package board.form;
 
 import java.util.Date;
+import java.util.List;
 
 public class ReadBoardForm {
 	
@@ -12,6 +13,7 @@ public class ReadBoardForm {
 	private String content;
 	private Date wrTime; 
 	private String checkPublic;
+	private List<ReplyForm> replies;
 	
 	public ReadBoardForm(int bNumber, int mNumber, String name, String kindOfBoard, String title, String content,
 			Date wrTime, String checkPublic) {
@@ -89,4 +91,11 @@ public class ReadBoardForm {
 		this.checkPublic = checkPublic;
 	}
 	
+	public List<ReplyForm> getReplies() {
+		return replies;
+	}
+	
+	public void setReplies(List<ReplyForm> replies) {
+	    this.replies = replies;
+	}
 }
