@@ -11,8 +11,9 @@ public class Member {
 	private String gender;
 	private String email;
 	private String phone;
+	private int mNumber;
 
-	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone) {
+	public Member(String id, String pw, String name, Date birth, String gender, String email, String phone, int mNumber) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -20,6 +21,7 @@ public class Member {
 		this.gender = gender;
 		this.email = email;
 		this.phone = phone;
+		this.mNumber = mNumber;
 	}
 
 	public String getId() {
@@ -58,5 +60,11 @@ public class Member {
 		this.pw = newPwd;
 	}
 
+	public int getmNumber() {
+		return mNumber;
+	}
+
+	
+	
 
 }
