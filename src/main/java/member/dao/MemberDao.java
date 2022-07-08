@@ -15,32 +15,53 @@ public class MemberDao {
 		ResultSet rs = null;
 
 		try {
-			pstmt = conn.prepareStatement(
-					"select * from member where ID = ?");
+			pstmt = conn.prepareStatement("select * from member where ID = ?");
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			Member member = null;
 			if (rs.next()) {
-				member = new Member(rs.getString("ID"),
-						rs.getString("PW"),
-						rs.getString("NAME"),
-						rs.getDate("BIRTH"),
-						rs.getString("GENDER"),
-						rs.getString("EMAIL"),
-						rs.getString("PHONE"));
-//						toDate(rs.getTimestamp("regdate")));
+				member = new Member(rs.getString("ID"), rs.getString("PW"), rs.getString("NAME"), rs.getDate("BIRTH"),
+						rs.getString("GENDER"), rs.getString("EMAIL"), rs.getString("PHONE"), rs.getInt("MNUMBER"));
 			}
 			return member;
-			
+
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
 		}
 	}
 
+	public Member selectBymNumber(Connection conn, int mNumber) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+    		
+    		String sql = "select * from member where MNUMBER = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, mNumber);
+			rs = pstmt.executeQuery();
+			Member member = null;
+
+			if (rs.next()) {
+				member = new Member(rs.getString("ID"), rs.getString("PW"), rs.getString("NAME"), rs.getDate("BIRTH"),
+						rs.getString("GENDER"), rs.getString("EMAIL"), rs.getString("PHONE"), rs.getInt("MNUMBER"));
+			}
+
+			return member;
+		} catch (SQLException e) {
+				throw new RuntimeException(e);
+		}
+
+		finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
 
 	public void insert(Connection conn, Member mem) throws SQLException, ParseException {
-		try (PreparedStatement pstmt = conn.prepareStatement("insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)")) {
+		try (PreparedStatement pstmt = conn.prepareStatement(
+				"insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)")) {
 			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getPw());
 			pstmt.setString(3, mem.getName());
@@ -53,8 +74,7 @@ public class MemberDao {
 	}
 
 	public void update(Connection conn, Member member) throws SQLException {
-		try (PreparedStatement pstmt = conn.prepareStatement(
-				"update member set name = ?, pw = ? where id = ?")) {
+		try (PreparedStatement pstmt = conn.prepareStatement("update member set name = ?, pw = ? where id = ?")) {
 			pstmt.setString(1, member.getName());
 			pstmt.setString(2, member.getPw());
 			pstmt.setString(3, member.getId());
