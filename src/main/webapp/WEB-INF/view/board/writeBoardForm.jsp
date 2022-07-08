@@ -83,18 +83,17 @@
 					
 						<div class="modal-footer">
 							<c:if test="${param.kindOfBoard eq '자유'}"> 
-								<input type="hidden" name="checkPublic" value="Y">
+								<input type="hidden" name="checkPublic" value="Y" />
 							</c:if>
 							<c:if test="${param.kindOfBoard eq '문의'}"> 
-								<input type="radio" name="checkPublic" value="Y" checked> 공개
-								<input type="radio" name="checkPublic" value="N"> 비공개
+								<input type="radio" name="checkPublic" value="Y"> 공개<span>&ensp;</span>
+								<input type="radio" name="checkPublic" value="N" checked /> 비공개<span>&ensp;</span>
 							</c:if>		
 							<button type="button" class="btn btn-light" data-dismiss="modal"
 								onclick="location.href='/board/list.do?kindOfBoard=${param.kindOfBoard}'">취소</button>
-							<input type="submit" class="btn btn-primary" value="글 등록">
+							<input type="submit" class="btn btn-primary" value="글 등록" />
 						</div>
 					</form>
-					
 				</div>
 			</div>
 		</div>
