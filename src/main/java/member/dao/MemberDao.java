@@ -44,28 +44,25 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
+		String sql = "select * from member where MNUMBER = ?";
+
 		try {
-			pstmt = conn.prepareStatement(
-					"select * from member where MNUMBER = ?");
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, mNumber);
 			rs = pstmt.executeQuery();
 			Member member = null;
 
 			if (rs.next()) {
-				member = new Member(rs.getString("ID"),
-						rs.getString("PW"),
-						rs.getString("NAME"),
-						rs.getDate("BIRTH"),
-						rs.getString("GENDER"),
-						rs.getString("EMAIL"),
-						rs.getString("PHONE"));
-				member.setmNumber(rs.getInt("MNUMBER"));
+				member = new Member(rs.getString("ID"), rs.getString("PW"), rs.getString("NAME"), rs.getDate("BIRTH"),
+						rs.getString("GENDER"), rs.getString("EMAIL"), rs.getString("PHONE"), rs.getInt("MNUMBER"));
 			}
 
 			return member;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
+		}
+
+		finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
 		}
