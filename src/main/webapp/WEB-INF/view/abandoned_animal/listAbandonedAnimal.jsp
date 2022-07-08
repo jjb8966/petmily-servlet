@@ -43,45 +43,6 @@
 
 <section class="ftco-section bg-light">
     <div class="container">
-        <%--        <div class="row">--%>
-        <%--            <div class="col-md-6 col-lg-3 ftco-animate">--%>
-        <%--                <div class="staff">--%>
-        <%--                    <div class="img-wrap d-flex align-items-stretch">--%>
-        <%--                        <div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>--%>
-        <%--                    </div>--%>
-        <%--                    <div class="text pt-3 px-3 pb-4 text-center">--%>
-        <%--                        <h3>Lloyd Wilson</h3>--%>
-        <%--                        <span class="position mb-2">Health Coach</span>--%>
-        <%--                        <div class="faded">--%>
-        <%--                            <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>--%>
-        <%--                            <ul class="ftco-social text-center">--%>
-        <%--                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>--%>
-        <%--                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>--%>
-        <%--                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>--%>
-        <%--                                <li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>--%>
-        <%--                            </ul>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--        </div>--%>
-
-        <%--            <c:forEach var="boardVO" items="${boardList}">    --%>
-        <%--                <p><c:out value="${boardVO.title}" /></p>--%>
-        <%--            </c:forEach>--%>
-
-
-        <%--                <tr>--%>
-        <%--                    <td>${article.number}</td>--%>
-        <%--                    <td>--%>
-        <%--                        <a href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}">--%>
-        <%--                            <c:out value="${article.title}"/>--%>
-        <%--                        </a>--%>
-        <%--                    </td>--%>
-        <%--                    <td>${article.writer.name}</td>--%>
-        <%--                    <td>${article.readCount}</td>--%>
-        <%--                </tr>--%>
-
         <div class="row">
             <c:forEach var="abandonedAnimal" items="${abandonedAnimals.content}">
                 <div class="col-md-6 col-lg-3 ftco-animate" onclick="location.href='/abandoned_animal/detail.do?abNumber=${abandonedAnimal.abNumber}'">
@@ -101,21 +62,36 @@
                 </div>
             </c:forEach>
         </div>
-<%--        <div>--%>
-<%--            <c:if test="${abandonedAnimals.hasAnimals()}">--%>
-<%--                <c:if test="${abandonedAnimals.startPage > 5}">--%>
-<%--                    <a href="/abandoned_animal/list.do?pageNo=${abandonedAnimals.startPage - 5}">[이전]</a>--%>
-<%--                </c:if>--%>
-<%--                <c:forEach var="pNo"--%>
-<%--                           begin="${abandonedAnimals.startPage}"--%>
-<%--                           end="${abandonedAnimals.endPage}">--%>
-<%--                    <a href="/abandoned_animal/list.do?pageNo=${pNo}">[${pNo}]</a>--%>
-<%--                </c:forEach>--%>
-<%--                <c:if test="${abandonedAnimals.endPage < abandonedAnimals.totalPages}">--%>
-<%--                    <a href="/abandoned_animal/list.do?pageNo=${abandonedAnimals.startPage + 5}">[다음]</a>--%>
-<%--                </c:if>--%>
-<%--            </c:if>--%>
-<%--        </div>--%>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li>
+                            <c:if test="${abandonedAnimals.startPage > 5}">
+                                <a href="${pageContext.request.contextPath}/abandoned_animal/list.do?pageNo=${abandonedAnimals.startPage - 5}">&lt;</a>
+                            </c:if>
+                        </li>
+                        <c:forEach var="pNo" begin="${abandonedAnimals.startPage}" end="${abandonedAnimals.endPage}">
+                            <c:if test="${abandonedAnimals.currentPage == pNo}">
+                                <li class="active">
+                                    <a href="${pageContext.request.contextPath}/abandoned_animal/list.do?pageNo=${pNo}">${pNo}</a>
+                                </li>
+                            </c:if>
+                            <c:if test="${abandonedAnimals.currentPage != pNo}">
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/abandoned_animal/list.do?pageNo=${pNo}">${pNo}</a>
+                                </li>
+                            </c:if>
+                        </c:forEach>
+                        <li>
+                            <c:if test="${abandonedAnimals.endPage < abandonedAnimals.totalPages}">
+                                <a href="${pageContext.request.contextPath}/find/list.do?pageNo=${abandonedAnimals.startPage + 5}">&gt;</a>
+                            </c:if>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -129,7 +105,6 @@
                 stroke="#F96D00"/>
     </svg>
 </div>
-
 
 <script src="../../../petsitting-master/js/jquery.min.js"></script>
 <script src="../../../petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
@@ -147,7 +122,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="../../../petsitting-master/js/google-map.js"></script>
 <script src="../../../petsitting-master/js/main.js"></script>
-
 
 </body>
 </html>

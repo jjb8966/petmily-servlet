@@ -2,7 +2,7 @@ package abandoned_animal.service;
 
 import abandoned_animal.dao.AbandonedAnimalDao;
 import abandoned_animal.form.AbandonedAnimalDetailForm;
-import abandoned_animal.form.AbandonedAnimalPage;
+import abandoned_animal.form.AbandonedAnimalPageForm;
 import abandoned_animal.model.AbandonedAnimal;
 import jdbc.connection.ConnectionProvider;
 
@@ -30,7 +30,7 @@ public class AbandonedAnimalService {
     }
     
 
-    public AbandonedAnimalPage getAbandonedAnimalPage(int pageNo) {
+    public AbandonedAnimalPageForm getAbandonedAnimalPage(int pageNo) {
         try (Connection conn = ConnectionProvider.getConnection()) { 
         	conn.setAutoCommit(false);
         	
@@ -39,7 +39,7 @@ public class AbandonedAnimalService {
             
             conn.commit();
 
-            return new AbandonedAnimalPage(total, pageNo, size, content);
+            return new AbandonedAnimalPageForm(total, pageNo, size, content);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

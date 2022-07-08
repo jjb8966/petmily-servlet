@@ -1,6 +1,6 @@
 package abandoned_animal.command;
 
-import abandoned_animal.form.AbandonedAnimalPage;
+import abandoned_animal.form.AbandonedAnimalPageForm;
 import abandoned_animal.service.AbandonedAnimalService;
 import mvc.command.CommandHandler;
 
@@ -20,7 +20,7 @@ public class ListAbandonedAnimalHandler implements CommandHandler {
             pageNo = Integer.parseInt(pageNoVal);
         }
 
-        AbandonedAnimalPage abandonedAnimals = listAbandonedAnimalService.getAbandonedAnimalPage(pageNo);
+        AbandonedAnimalPageForm abandonedAnimals = listAbandonedAnimalService.getAbandonedAnimalPage(pageNo);
         req.setAttribute("abandonedAnimals", abandonedAnimals);
 
         return "/WEB-INF/view/abandoned_animal/listAbandonedAnimal.jsp";

@@ -1,7 +1,6 @@
 package abandoned_animal.command;
 
 import abandoned_animal.form.AbandonedAnimalDetailForm;
-import abandoned_animal.form.AbandonedAnimalPage;
 import abandoned_animal.service.AbandonedAnimalService;
 import mvc.command.CommandHandler;
 

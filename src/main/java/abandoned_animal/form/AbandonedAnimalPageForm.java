@@ -4,16 +4,16 @@ import abandoned_animal.model.AbandonedAnimal;
 
 import java.util.List;
 
-public class AbandonedAnimalPage {
+public class AbandonedAnimalPageForm {
 
-    private int total;  //12
-    private int currentPage;  //2
+    private int total;
+    private int currentPage;
     private List<AbandonedAnimal> content;
-    private int totalPages; //1+1=2
-    private int startPage;  //1
-    private int endPage; //2
+    private int totalPages;
+    private int startPage;
+    private int endPage;
 
-    public AbandonedAnimalPage(int total, int pageNo, int size, List<AbandonedAnimal> content) {
+    public AbandonedAnimalPageForm(int total, int currentPage, int size, List<AbandonedAnimal> content) {
         this.total = total;
         this.currentPage = currentPage;
         this.content = content;
