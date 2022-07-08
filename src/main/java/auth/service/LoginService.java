@@ -21,7 +21,7 @@ public class LoginService {
 			if (!member.matchPw(pw)) {
 				throw new LoginFailException();
 			}
-			return new User(member.getId(), member.getName());
+			return new User(member.getId(), member.getName(), member.getmNumber());
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
