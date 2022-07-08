@@ -30,7 +30,6 @@ public class AbandonedAnimalDao {
 		try {
 
 			while (rs.next()) {
-
 				int abNumber = rs.getInt("ABNUMBER");
 				int sNumber = rs.getInt("SNUMBER");
 				int age = rs.getInt("AGE");
@@ -49,6 +48,7 @@ public class AbandonedAnimalDao {
 				return new AbandonedAnimalDetailForm(abNumber, sNumber, age, weight, name, species, kind, gender,
 						location, uniqueness, description, imgPath, animalState, admissionDate);
 			}
+
 			return null;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -59,14 +59,16 @@ public class AbandonedAnimalDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select ABNUMBER, NAME, LOCATION, ADMISSIONDATE, IMGPATH " + "FROM "
-				+ "(select rownum, ABNUMBER, NAME, LOCATION, ADMISSIONDATE, IMGPATH from ABANDONEDANIMAL) "
-				+ "where rownum between ? and ?";
+		String sql = "select * from"
+				+ " (select ROWNUM as NUM, A.ABNUMBER, A.NAME, A.LOCATION, A.ADMISSIONDATE, A.IMGPATH FROM"
+				+ " (select * from ABANDONEDANIMAL"
+				+ " order by abNumber DESC) A)"
+				+ " where NUM between ? and ?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, start);
-			pstmt.setInt(2, end);
+			pstmt.setInt(1, start + 1);
+			pstmt.setInt(2, start + end);
 			rs = pstmt.executeQuery();
 
 			List<AbandonedAnimal> result = new ArrayList<>();
