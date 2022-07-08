@@ -12,11 +12,11 @@
                 <div><span class="brand"><img src="https://i.imgur.com/zpXluzv.png"><small>CYCLO</small></span>
                     <form action="/login.do" method="post">
                         <div class="form-inputs">
-                            <input type="text" name="id" placeholder="User Name">
+                            <input type="text" name="id" placeholder="User Name" required="required" />
                             <%--                        <input type="text" placeholder="Email Address">--%>
 
                             <div class="password">
-                                <input id="password" name="pw" type="password" placeholder="Password"> <span
+                                <input id="password" name="pw" type="password" placeholder="Password" required="required" /> <span
                                     class="showpass" onclick="toggle()">
                             <img id="changepasseye" src="https://i.imgur.com/d1M6y1W.jpg"> </span>
                                 <p class="random_password"></p>
