@@ -24,6 +24,13 @@ public class MemberInfo {
         this.grade = grade;
     }
 
+    public MemberInfo(String pw, String name, String email, String phone) {
+        this.pw = pw;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
     public String getId() {
         return id;
     }

@@ -4,7 +4,6 @@ import jdbc.JdbcUtil;
 import jdbc.connection.ConnectionProvider;
 import member.dao.MemberDao;
 import member.exception.DuplicateIdException;
-import member.exception.InvalidPasswordException;
 import member.exception.MemberNotFoundException;
 import member.form.JoinRequest;
 import member.form.MemberInfo;
@@ -18,30 +17,6 @@ import java.text.ParseException;
 public class MemberService {
 
     private MemberDao memberDao = new MemberDao();
-
-    public void changePassword(String userId, String curPwd, String newPwd) {
-        Connection conn = null;
-        try {
-            conn = ConnectionProvider.getConnection();
-            conn.setAutoCommit(false);
-
-            Member member = memberDao.selectById(conn, userId);
-            if (member == null) {
-                throw new MemberNotFoundException();
-            }
-            if (!member.matchPw(curPwd)) {
-                throw new InvalidPasswordException();
-            }
-            member.changePw(newPwd);
-            memberDao.update(conn, member);
-            conn.commit();
-        } catch (SQLException e) {
-            JdbcUtil.rollback(conn);
-            throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
-        }
-    }
 
     public void join(JoinRequest joinReq) throws ParseException {
         Connection conn = null;
@@ -66,10 +41,8 @@ public class MemberService {
     }
 
     public MemberInfo findById(String userId) {
-        Connection conn = null;
-
-        try {
-            conn = ConnectionProvider.getConnection();
+        try (Connection conn = ConnectionProvider.getConnection()){
+            conn.setAutoCommit(false);
 
             Member member = memberDao.selectById(conn, userId);
 
@@ -87,11 +60,10 @@ public class MemberService {
             String grade = member.getGrade();
 
             MemberInfo memberInfo = new MemberInfo(id, pw, name, birth, gender, email, phone, grade);
+
             return memberInfo;
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            JdbcUtil.close(conn);
         }
     }
 
