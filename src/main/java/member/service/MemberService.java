@@ -94,4 +94,23 @@ public class MemberService {
             JdbcUtil.close(conn);
         }
     }
+
+    public void changeMemberInfo(String id, MemberInfo memberInfo) {
+        try (Connection conn = ConnectionProvider.getConnection()){
+            conn.setAutoCommit(false);
+
+            String pw = memberInfo.getPw();
+            String name = memberInfo.getName();
+            String email = memberInfo.getEmail();
+            String phone = memberInfo.getPhone();
+
+            Member member = new Member(id, pw, name, email, phone);
+
+            memberDao.update(conn, member);
+
+            conn.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
