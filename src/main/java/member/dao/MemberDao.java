@@ -3,225 +3,232 @@ package member.dao;
 import jdbc.JdbcUtil;
 import member.model.Member;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class MemberDao {
 
-	public Member selectById(Connection conn, String id) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+    public Member selectById(Connection conn, String id) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-		try {
-			pstmt = conn.prepareStatement(
-					"select * from member where ID = ?");
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			Member member = null;
-			if (rs.next()) {
-				member = new Member(
-						rs.getInt("MNUMBER"),
-						rs.getString("ID"),
-						rs.getString("PW"),
-						rs.getString("NAME"),
-						rs.getDate("BIRTH"),
-						rs.getString("GENDER"),
-						rs.getString("EMAIL"),
-						rs.getString("PHONE"),
-						rs.getString("GRADE")
-				);
-			}
+        try {
+            pstmt = conn.prepareStatement(
+                    "select * from member where ID = ?");
+            pstmt.setString(1, id);
+            rs = pstmt.executeQuery();
+            Member member = null;
+            if (rs.next()) {
+                member = new Member(
+                        rs.getInt("MNUMBER"),
+                        rs.getString("ID"),
+                        rs.getString("PW"),
+                        rs.getString("NAME"),
+                        rs.getDate("BIRTH"),
+                        rs.getString("GENDER"),
+                        rs.getString("EMAIL"),
+                        rs.getString("PHONE"),
+                        rs.getString("GRADE")
+                );
+            }
 
-			return member;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-	}
+            return member;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-	public Member selectBymNumber(Connection conn, int mNumber) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+    public Member selectBymNumber(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-		try {
-			pstmt = conn.prepareStatement(
-					"select * from member where MNUMBER = ?");
-			pstmt.setInt(1, mNumber);
-			rs = pstmt.executeQuery();
-			Member member = null;
+        String sql = "select * from member where MNUMBER = ?";
 
-			if (rs.next()) {
-				member = new Member(rs.getString("ID"),
-						rs.getString("PW"),
-						rs.getString("NAME"),
-						rs.getDate("BIRTH"),
-						rs.getString("GENDER"),
-						rs.getString("EMAIL"),
-						rs.getString("PHONE"));
-				member.setmNumber(rs.getInt("MNUMBER"));
-			}
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
+            Member member = null;
 
-			return member;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-	}
+            if (rs.next()) {
+                member = new Member(
+                        rs.getInt("MNUMBER"),
+                        rs.getString("ID"),
+                        rs.getString("PW"),
+                        rs.getString("NAME"),
+                        rs.getDate("BIRTH"),
+                        rs.getString("GENDER"),
+                        rs.getString("EMAIL"),
+                        rs.getString("PHONE"),
+                        rs.getString("GRADE")
+                );
+            }
 
-	public void insert(Connection conn, Member mem) {
-		PreparedStatement pstmt = null;
+            return member;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)";
+    public void insert(Connection conn, Member mem) {
+        PreparedStatement pstmt = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, mem.getId());
-			pstmt.setString(2, mem.getPw());
-			pstmt.setString(3, mem.getName());
-			pstmt.setDate(4, mem.getBirth());
-			pstmt.setString(5, mem.getGender());
-			pstmt.setString(6, mem.getEmail());
-			pstmt.setString(7, mem.getPhone());
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(pstmt);
-		}
-	}
+        String sql = "insert into MEMBER (ID, PW, NAME, BIRTH, GENDER, EMAIL, PHONE) values (?,?,?,?,?,?,?)";
 
-	public void update(Connection conn, Member member) {
-		PreparedStatement pstmt = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, mem.getId());
+            pstmt.setString(2, mem.getPw());
+            pstmt.setString(3, mem.getName());
+            pstmt.setDate(4, mem.getBirth());
+            pstmt.setString(5, mem.getGender());
+            pstmt.setString(6, mem.getEmail());
+            pstmt.setString(7, mem.getPhone());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "update MEMBER set PW = ?, NAME = ?, PHONE = ?, EMAIL = ? where ID = ?";
+    public void update(Connection conn, Member member) {
+        PreparedStatement pstmt = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, member.getPw());
-			pstmt.setString(2, member.getName());
-			pstmt.setString(3, member.getPhone());
-			pstmt.setString(4, member.getEmail());
-			pstmt.setString(5, member.getId());
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(pstmt);
-		}
-	}
+        String sql = "update MEMBER set PW = ?, NAME = ?, PHONE = ?, EMAIL = ? where ID = ?";
 
-	public void delete(Connection conn, int mNumber) {
-		PreparedStatement pstmt = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, member.getPw());
+            pstmt.setString(2, member.getName());
+            pstmt.setString(3, member.getPhone());
+            pstmt.setString(4, member.getEmail());
+            pstmt.setString(5, member.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "delete MEMBER where MNUMBER=?";
+    public void delete(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mNumber);
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(pstmt);
-		}
-	}
+        String sql = "delete MEMBER where MNUMBER=?";
 
-	public String selectName(Connection conn, int mNumber) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "select NAME from MEMBER where MNUMBER = ?";
+    public String selectName(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mNumber);
-			rs = pstmt.executeQuery();
+        String sql = "select NAME from MEMBER where MNUMBER = ?";
 
-			if (rs.next()) {
-				return rs.getString("NAME");
-			}
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
 
-			return null;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-	}
+            if (rs.next()) {
+                return rs.getString("NAME");
+            }
 
-	public String selectBirth(Connection conn, int mNumber) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "select BIRTH from MEMBER where MNUMBER = ?";
+    public String selectBirth(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mNumber);
-			rs = pstmt.executeQuery();
+        String sql = "select BIRTH from MEMBER where MNUMBER = ?";
 
-			if (rs.next()) {
-				return rs.getString("BIRTH");
-			}
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
 
-			return null;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-	}
+            if (rs.next()) {
+                return rs.getString("BIRTH");
+            }
 
-	public String selectPhone(Connection conn, int mNumber) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "select PHONE from MEMBER where MNUMBER = ?";
+    public String selectPhone(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mNumber);
-			rs = pstmt.executeQuery();
+        String sql = "select PHONE from MEMBER where MNUMBER = ?";
 
-			if (rs.next()) {
-				return rs.getString("PHONE");
-			}
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
 
-			return null;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-	}
+            if (rs.next()) {
+                return rs.getString("PHONE");
+            }
 
-	public String selectEmail(Connection conn, int mNumber) {
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 
-		String sql = "select EMAIL from MEMBER where MNUMBER = ?";
+    public String selectEmail(Connection conn, int mNumber) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mNumber);
-			rs = pstmt.executeQuery();
+        String sql = "select EMAIL from MEMBER where MNUMBER = ?";
 
-			if (rs.next()) {
-				return rs.getString("EMAIL");
-			}
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, mNumber);
+            rs = pstmt.executeQuery();
 
-			return null;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-	}
+            if (rs.next()) {
+                return rs.getString("EMAIL");
+            }
+
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            JdbcUtil.close(rs);
+            JdbcUtil.close(pstmt);
+        }
+    }
 }
