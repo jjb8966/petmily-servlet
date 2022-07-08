@@ -86,7 +86,7 @@
 				
 								<button type="button" class="btn btn-light"
 									onclick="if(confirm('정말로 삭제하시겠습니까?')) 
-									{return location.href='/boardReplydo/delete.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}';}">삭제</button>
+									{return location.href='/board/delete.do?kindOfBoard=${param.kindOfBoard}&bNumber=${readBoardForm.bNumber}';}">삭제</button>
 							</c:if>
 							
 						<!-- content 목록 이동 버튼 -->
