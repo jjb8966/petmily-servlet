@@ -61,13 +61,21 @@
 			<div class="card-body">
 				<div class="media forum-item">
 				
-				<!-- content title, name, wrTime -->
+				<!-- content title, name, wrTime, checkPublic -->
 				
 					<div class="media-body ml-3">
 						<b> <span style="font-size: 2em;">${readBoardForm.title}</span> </b>
 						<h6 class="mt-1"></h6>
-						<small><a href="javascript:void(0)">${readBoardForm.name}</a></small>
-						<small><i class="far fa-comment ml-2"></i> date ${readBoardForm.wrTime} </small>
+							<small><a href="javascript:void(0)">${readBoardForm.name}</a></small>
+							<small><i class="far fa-comment ml-2"></i> date ${readBoardForm.wrTime} </small>
+							
+							<c:if test="${readBoardForm.checkPublic eq 'Y'}">
+								<span><small><i class="far fa-comment ml-2"></i> 공개</small></span>
+        					</c:if>
+        					<c:if test="${readBoardForm.checkPublic eq 'N'}">
+        						<span><small><i class="far fa-comment ml-2"></i> 비공개</small></span>
+        					</c:if>
+        					
 						<div class="modal-footer"></div>
 						
 					<!-- content 내용 -->
