@@ -55,15 +55,20 @@
                                         </div>
 
                                         <hr color="#6c757d" width="100%">
-
-                                        <div class="write-input">
-                                            <label for="speciesInput">종:</label><input type="text" class="form-control" name="species" id="speciesInput"
-                                                                                       placeholder="개/고양이/기타 중 하나를 입력 해 주세요" required="required"/>
-                                            <label for="kindInput">품종:</label><input type="text" class="form-control" name="kind" id="kindInput"
-                                                                                     placeholder="모르는 경우 '모름' 작성" required="required"/>
-                                            <label for="locationInput">실종 장소:</label><input type="text" class="form-control" name="location" id="locationInput"
-                                                                                            placeholder="모르는 경우 '모름' 작성" required="required"/>
-                                        </div>
+                                            
+                                            <div><label for="speciesInput">종:</label><br>
+													<div class="form-check form-check-inline">
+                                            			<input type="radio" class="form-check-input" name="species" id="speciesInput" value="개" />개<span>&emsp;</span>
+                                            			<input type="radio" class="form-check-input" name="species" id="speciesInput" value="고양이"/>고양이<span>&emsp;</span>
+                                            			<input type="radio" class="form-check-input" name="species" id="speciesInput" value="기타" checked="checked"/>기타 
+                                        			</div>
+                                        		<div class="write-input">
+                                            		<label for="kindInput">품종:</label><input type="text" class="form-control" name="kind" id="kindInput"
+                                                                                     	placeholder="모르는 경우 '모름' 작성" required="required"/>
+                                            		<label for="locationInput">실종 장소:</label><input type="text" class="form-control" name="location" id="locationInput"
+                                                                                        placeholder="모르는 경우 '모름' 작성" required="required"/>
+                                        		</div>
+                                        	</div>
 
                                         <hr color="#6c757d" width="100%">
 
