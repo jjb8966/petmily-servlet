@@ -27,13 +27,13 @@
 
 <%@ include file="/WEB-INF/view/include/header.jspf" %>
 
- <div class="hero-wrap js-fullheight" style="background-image: url('petsitting-master/images/bg_4.jpg');" data-stellar-background-ratio="0.5">
+ <div class="hero-wrap js-fullheight" style="background-image: url('petsitting-master/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-11 ftco-animate text-center">
           	<h1 class="mb-4">사지 말고 입양하세요</h1>
-            <p><a href="#" class="btn btn-primary mr-md-4 py-3 px-4">수 많은 아이들이 당신을 기다리고 있습니다<span class="ion-ios-arrow-forward"></span></a></p>
+            <p><a href="#about-us" class="btn btn-primary mr-md-4 py-3 px-4">수 많은 아이들이 당신을 기다리고 있습니다<span class="ion-ios-arrow-forward"></span></a></p>
           </div>
         </div>
       </div>
@@ -48,8 +48,8 @@
             		<span class="flaticon-blind"></span>
               </div>
               <div class="media-body">
-                <h3 class="heading">봉사하기</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                <h3 class="heading">유기동물 조회</h3>
+                <p>가족을 찾고 계신가요? 수 많은 아이들이 당신의 가족이 되길 기다리고 있습니다. 아이들에게 희망의 손길을 내밀어 주세요.</p>
                 <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>      
@@ -60,8 +60,8 @@
             		<span class="flaticon-dog-eating"></span>
               </div>
               <div class="media-body">
-                <h3 class="heading">유기동물 조회</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                <h3 class="heading">반려동물 찾아요</h3>
+                <p>소중한 가족을 잃어버리셨나요? 반려동물 찾아요 게시판에 정보를 등록해주세요. 당신의 가족을 찾기 위한 도움을 제공합니다.</p>
                 <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>    
@@ -73,53 +73,55 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">커뮤니티</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right.</p>
+                <p>커뮤니티 설명</p>
                 <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
               </div>
             </div>      
           </div>
         </div>
+        <a name = about-us></a>
     	</div>
     </section>
     
      <section class="ftco-section ftco-no-pt ftco-no-pb">
+    
     	<div class="container">
     		<div class="row d-flex no-gutters">
     			<div class="col-md-5 d-flex">
-    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(petsitting-master/images/about-2.png);">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(petsitting-master/images/about-1.jpg);">
     				</div>
     			</div>
     			<div class="col-md-7 pl-md-5 py-md-5">
     				<div class="heading-section pt-md-5">
-	            <h2 class="mb-4">반려견, 이제 그저 동물이 아닌 가족입니다.</h2>
+	            <h2 class="mb-4">반려동물, 이제는 누군가의 가족입니다.</h2>
     				</div>
     				<div class="row">
 	    				<div class="col-md-6 services-2 w-100 d-flex">
 	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-stethoscope"></span></div>
 	    					<div class="text pl-3">
-	    						<h4>수많은 유기동물들</h4>
+	    						<h4>about us-1</h4>
 	    						<p>한 해에 수천마리의 동물이 유기되고 있습니다.</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-6 services-2 w-100 d-flex">
 	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-customer-service"></span></div>
 	    					<div class="text pl-3">
-	    						<h4>Customer Supports</h4>
-	    						<p>Far far away, behind the word mountains, far from the countries.</p>
+	    						<h4>about us-2</h4>
+	    						<p>사이트를 설계한 이유 목적</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-6 services-2 w-100 d-flex">
 	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-emergency-call"></span></div>
 	    					<div class="text pl-3">
-	    						<h4>Emergency Services</h4>
-	    						<p>Far far away, behind the word mountains, far from the countries.</p>
+	    						<h4>about us-3</h4>
+	    						<p>도움 요청</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-6 services-2 w-100 d-flex">
 	    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-veterinarian"></span></div>
 	    					<div class="text pl-3">
-	    						<h4>Veterinary Help</h4>
-	    						<p>Far far away, behind the word mountains, far from the countries.</p>
+	    						<h4>about us-4</h4>
+	    						<p>글글글</p>
 	    					</div>
 	    				</div>
 	    			</div>
@@ -179,21 +181,21 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-6 order-md-last">
-    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(images/about.jpg);">
-    					<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(petsitting-master/images/about-4.jpg);">
+    					<a href="https://vimeo.com/248735074" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
     						<span class="fa fa-play"></span>
     					</a>
     				</div>
     				<div class="d-flex mt-3">
-    					<div class="img img-2 mr-md-2" style="background-image:url(images/about-2.jpg);"></div>
-    					<div class="img img-2 ml-md-2" style="background-image:url(images/about-3.jpg);"></div>
+    					<div class="img img-2 mr-md-2" style="background-image:url(petsitting-master/images/about-5.jpg);"></div>
+    					<div class="img img-2 ml-md-2" style="background-image:url(petsitting-master/images/about-6.jpg);"></div>
     				</div>
     			</div>
 
     			<div class="col-lg-6">
     				<div class="heading-section mb-5 mt-5 mt-lg-0">
 	            <h2 class="mb-3">자주 하는 질문 모음</h2>
-	            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	            <p>자주 하는 질문 모음입니다.</p>
     				</div>
     				<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
 						  <div class="card">
@@ -208,11 +210,11 @@
 						    <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
 						      <div class="card-body py-3 px-0">
 						      	<ol>
-						      		<li>Far far away, behind the word mountains</li>
-						      		<li>Consonantia, there live the blind texts</li>
-						      		<li>When she reached the first hills of the Italic Mountains</li>
-						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
-						      		<li>Separated they live in Bookmarksgrove right</li>
+						      		<li>입양신청서 작성 > 전화상담 및 방문면담 > 입양동의서 작성 후 입양 순으로 진행됩니다.
+</li>
+						      		<li>입양 자격 심사 등 추가적인 조건이 생길 수 있습니다.</li>
+						      		<li>입양 이후 지속해서 기관의 연락이 갈 수 있습니다.</li>
+						      		
 						      	</ol>
 						      </div>
 						    </div>
@@ -230,11 +232,8 @@
 						    <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="card-body py-3 px-0">
 						      	<ol>
-						      		<li>Far far away, behind the word mountains</li>
-						      		<li>Consonantia, there live the blind texts</li>
-						      		<li>When she reached the first hills of the Italic Mountains</li>
-						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
-						      		<li>Separated they live in Bookmarksgrove right</li>
+						      		<li>해당 기관의 관리에 따라 다른 보호소로 이동된 뒤 다시 지원하게 됩니다.</li>
+						      		<li>보호소가 이동되면 후원자님께 이전된 보호소 정보를 다시 전달드립니다.</li>
 						      	</ol>
 						      </div>
 						    </div>
@@ -244,7 +243,7 @@
 						    <div class="card-header p-0" id="headingThree" role="tab">
 						      <h2 class="mb-0">
 						        <button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-						        	<p class="mb-0">What is the best grooming for your pets?</p>
+						        	<p class="mb-0">새로운 질문 등록 예정</p>
 						          <i class="fa" aria-hidden="true"></i>
 						        </button>
 						      </h2>
@@ -252,11 +251,11 @@
 						    <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="card-body py-3 px-0">
 						      	<ol>
-						      		<li>Far far away, behind the word mountains</li>
-						      		<li>Consonantia, there live the blind texts</li>
-						      		<li>When she reached the first hills of the Italic Mountains</li>
-						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
-						      		<li>Separated they live in Bookmarksgrove right</li>
+						      		<li>example</li>
+						      		<li>example</li>
+						      		<li>example</li>
+						      		<li>example</li>
+						      		<li>example</li>
 						      	</ol>
 						      </div>
 						    </div>
@@ -266,14 +265,20 @@
 						    <div class="card-header p-0" id="headingFour" role="tab">
 						      <h2 class="mb-0">
 						        <button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
-						        	<p class="mb-0">What are those requirements for sitting pets?</p>
+						        	<p class="mb-0">새로운 질문 등록 예정</p>
 						          <i class="fa" aria-hidden="true"></i>
 						        </button>
 						      </h2>
 						    </div>
 						    <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="card-body py-3 px-0">
-						      	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+						      	<ol>
+						      		<li>example</li>
+						      		<li>example</li>
+						      		<li>example</li>
+						      		<li>example</li>
+						      		<li>example</li>
+						      	</ol>
 						      </div>
 						    </div>
 						  </div>
@@ -299,11 +304,11 @@
                 <div class="testimony-wrap py-4">
                 	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">얌전하고 잘 짖지 않는 강아지입니다. 사람의 손길을 그리워해서 쓰다듬어주는걸 좋아합니다.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                    	<div class="user-img" style="background-image: url(petsitting-master/images/abani-01.jpg)"></div>
                     	<div class="pl-3">
-		                    <p class="name">바둑이</p>
+		                    <p class="name">바둑이(3년 추정)</p>
 		                    <span class="position">강아지 - 비숑</span>
 		                  </div>
 	                  </div>
@@ -314,11 +319,11 @@
                 <div class="testimony-wrap py-4">
                 	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">사람을 좋아하는 수다쟁이에 애교쟁이 고양이입니다. 비 오는 날 안양 동안구 하천 아래에서 발견되었습니다. </p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                    	<div class="user-img" style="background-image: url(petsitting-master/images/abani-02.jpg)"></div>
                     	<div class="pl-3">
-		                    <p class="name">코코</p>
+		                    <p class="name">코코(6개월 추정)</p>
 		                    <span class="position">고양이 - 코리안 숏헤어</span>
 		                  </div>
 	                  </div>
@@ -329,11 +334,11 @@
                 <div class="testimony-wrap py-4">
                 	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">얌전하고 잘 짖지 않는 강아지입니다. 사람의 손길을 그리워해서 쓰다듬어주는걸 좋아합니다.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                    	<div class="user-img" style="background-image: url(petsitting-master/images/abani-03.jpg)"></div>
                     	<div class="pl-3">
-		                    <p class="name">몽실이</p>
+		                    <p class="name">몽실이(5년 추정)</p>
 		                    <span class="position">강아지 - 삽살견</span>
 		                  </div>
 	                  </div>
@@ -344,11 +349,11 @@
                 <div class="testimony-wrap py-4">
                 	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">사람을 좋아하는 수다쟁이에 애교쟁이 고양이입니다. 비 오는 날 안양 동안구 하천 아래에서 발견되었습니다.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                    	<div class="user-img" style="background-image: url(petsitting-master/images/abani-04.jpg)"></div>
                     	<div class="pl-3">
-		                    <p class="name">시루</p>
+		                    <p class="name">시루(1년 추정)</p>
 		                    <span class="position">강아지 - 말티즈</span>
 		                  </div>
 	                  </div>
@@ -359,16 +364,70 @@
                 <div class="testimony-wrap py-4">
                 	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
                   <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-4">사람을 좋아하는 수다쟁이에 애교쟁이 고양이입니다. 비 오는 날 안양 동안구 하천 아래에서 발견되었습니다.</p>
                     <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                    	<div class="user-img" style="background-image: url(petsitting-master/images/abani-05.jpg)"></div>
                     	<div class="pl-3">
-		                    <p class="name">치즈</p>
+		                    <p class="name">치즈(1년 추정)</p>
 		                    <span class="position">고양이 - 코리안 숏헤어</span>
 		                  </div>
 	                  </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+       <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2>오늘의 입양 후기</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('petsitting-master/images/image_1.jpg');">
+              </a>
+              <div class="text p-4">
+              	<div class="meta mb-2">
+                  <div><a href="#">April 07, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">저희집 자랑이 된 몽실이를 소개합니다!</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('petsitting-master/images/gallery-12.jpg');">
+              </a>
+              <div class="text p-4">
+              	<div class="meta mb-2">
+                  <div><a href="#">April 07, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">사랑둥이 치치에요 이 아이가 가져다준 행복이 너무 큽니다</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('petsitting-master/images/image_3.jpg');">
+              </a>
+              <div class="text p-4">
+              	<div class="meta mb-2">
+                  <div><a href="#">April 07, 2020</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">저희집 고양이가 세상에서 제일 귀여워요</a></h3>
               </div>
             </div>
           </div>
@@ -385,80 +444,80 @@
         </div>
 				<div class="row">
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-1.jpg);">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-8.jpg);">
             	<a href="images/gallery-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Cat</span>
-	              	<h2><a href="work-single.html">Persian Cat</a></h2>
+	              	<span>말티즈</span>
+	              	<h2><a href="work-single.html">몽쉬리</a></h2>
 	              </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-2.jpg);">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-9.jpg);">
             	<a href="images/gallery-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Dog</span>
-	              	<h2><a href="work-single.html">Pomeranian</a></h2>
+	              	<span>말티즈</span>
+	              	<h2><a href="work-single.html">쉬리몽</a></h2>
 	              </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-3.jpg);">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-10.jpg);">
             	<a href="images/gallery-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Cat</span>
-	              	<h2><a href="work-single.html">Sphynx Cat</a></h2>
+	              	<span>강아지</span>
+	              	<h2><a href="work-single.html">몽실이</a></h2>
 	              </div>
               </div>
             </div>
           </div>
 
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-4.jpg);">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-11.jpg);">
             	<a href="images/gallery-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Cat</span>
-	              	<h2><a href="work-single.html">British Shorthair</a></h2>
+	              	<span>사실은대형견</span>
+	              	<h2><a href="work-single.html">시루</a></h2>
 	              </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-5.jpg);">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-12.jpg);">
             	<a href="images/gallery-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Dog</span>
-	              	<h2><a href="work-single.html">Beagle</a></h2>
+	              	<span>강아지</span>
+	              	<h2><a href="work-single.html">쉴몽</a></h2>
 	              </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-6.jpg);">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(petsitting-master/images/gallery-13.jpg);">
             	<a href="images/gallery-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Dog</span>
-	              	<h2><a href="work-single.html">Pug</a></h2>
+	              	<span>개</span>
+	              	<h2><a href="work-single.html">권몽실</a></h2>
 	              </div>
               </div>
             </div>
@@ -467,61 +526,7 @@
 			</div>
 		</section>
 
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2>오늘의 입양 후기</h2>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4">
-              	<div class="meta mb-2">
-                  <div><a href="#">April 07, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text p-4">
-              	<div class="meta mb-2">
-                  <div><a href="#">April 07, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text p-4">
-              	<div class="meta mb-2">
-                  <div><a href="#">April 07, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_3.jpg);">
+   <!--  <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_3.jpg);">
 			<div class="overlay"></div>
     	<div class="container">
     		<div class="row d-md-flex justify-content-end">
@@ -588,7 +593,7 @@
     		</div>
     	</div>
     </section>
-
+ -->
 
 
 <%@ include file="/WEB-INF/view/include/footer.jspf" %>
