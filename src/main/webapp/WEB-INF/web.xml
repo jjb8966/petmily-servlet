@@ -12,9 +12,9 @@
         <param-name>poolConfig</param-name>
         <param-value>
             jdbcdriver=oracle.jdbc.driver.OracleDriver
-            jdbcUrl=jdbc:oracle:thin:@petmily_medium?TNS_ADMIN=C:/wallet/Wallet_petmily
-            dbUser=kej5
-            dbPass=Petmilymember5
+            jdbcUrl=jdbc:oracle:thin:@petmily_medium?TNS_ADMIN=/Users/joojongbum/oracle_db/Wallet_petmily/
+            dbUser=jjb1
+            dbPass=Petmilymember1
             validationQuery=select 1
             minIdle=3
             maxTotal=30
@@ -59,10 +59,10 @@
     </filter>
     <filter-mapping>
         <filter-name>LoginCheckFilter</filter-name>
-        <url-pattern>/changePwd.do</url-pattern>
-        <url-pattern>/article/*</url-pattern>
-        <url-pattern>/main/index.do</url-pattern>
         <url-pattern>/abandoned_animal/auth/*</url-pattern>
+        <url-pattern>/find/write.do</url-pattern>
+        <url-pattern>/board/write.do</url-pattern>
+        <url-pattern>/board/reply.do</url-pattern>
     </filter-mapping>
 
     <welcome-file-list>

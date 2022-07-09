@@ -197,7 +197,7 @@
                         <h3 class="heading">봉사하기</h3>
                         <p>봉사해주세요.</p>
                         <a
-                                href="/abandoned_animal/volunteer.do?abNumber=${param.abNumber}"
+                                href="/abandoned_animal/auth/volunteer.do?abNumber=${param.abNumber}"
                                 class="btn-custom d-flex align-items-center justify-content-center"><span
                                 class="fa fa-chevron-right"></span><i class="sr-only">Read
                             more</i></a>
