@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,18 +57,33 @@
                                         </div>
 
                                         <hr color="#6c757d" width="100%">
-
-                                        <div class="write-input">
-                                            <label for="speciesInput">종:</label><input type="text" class="form-control" name="species" id="speciesInput"
-                                                                                       placeholder="개/고양이/기타 중 하나를 입력 해 주세요" required="required"
-                                                                                       value="${findMod.species}"/>
-                                            <label for="kindInput">품종:</label><input type="text" class="form-control" name="kind" id="kindInput"
-                                                                                     placeholder="모르는 경우 빈칸으로 둬 주세요"
-                                                                                     value="${findMod.kind}"/>
-                                            <label for="locationInput">실종 장소:</label><input type="text" class="form-control" name="location" id="locationInput"
-                                                                                            placeholder="모르는 경우 빈칸으로 둬 주세요"
-                                                                                            value="${findMod.location}"/>
-                                        </div>
+                                            
+                                            <div><label for="speciesInput">종:</label><br>
+													<div class="form-check form-check-inline">
+														<c:choose>
+															<c:when test="${findMod.species == '개'}" >
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="개" checked/>개<span>&emsp;</span>
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="고양이"/>고양이<span>&emsp;</span>
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="기타"/>기타<span>&emsp;</span>
+                                            				</c:when>
+                                            				<c:when test="${findMod.species == '고양이'}">
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="개"/>개<span>&emsp;</span>
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="고양이" checked/>고양이<span>&emsp;</span>
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="기타"/>기타<span>&emsp;</span>
+                                            				</c:when>
+                                            				<c:when test="${findMod.species == '기타'}">
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="개"/>개<span>&emsp;</span>
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="고양이"/>고양이<span>&emsp;</span>
+                                            					<input type="radio" class="form-check-input" name="species" id="speciesInput" value="기타" checked/>기타 
+                                            				</c:when>
+                                        				</c:choose></div>
+                                        		<div class="write-input">
+                                            		<label for="kindInput">품종:</label><input type="text" class="form-control" name="kind" id="kindInput"
+                                                                                     	value="${findMod.kind}" required="required" />
+                                            		<label for="locationInput">실종 장소:</label><input type="text" class="form-control" name="location" id="locationInput"
+                                                                                        value="${findMod.location}" required="required"/>
+                                        		</div>
+                                        	</div>
 
                                         <hr color="#6c757d" width="100%">
 
