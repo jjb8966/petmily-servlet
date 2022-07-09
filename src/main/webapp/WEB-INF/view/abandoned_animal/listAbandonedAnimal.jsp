@@ -27,14 +27,14 @@
 
 <%@ include file="/WEB-INF/view/include/header.jspf" %>
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/petsitting-master/images/bg_2.jpg');"
          data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end">
             <div class="col-md-9 ftco-animate pb-5">
-<%--                <p class="breadcrumbs mb-2"><span class="mr-2">--%>
-<%--                    <a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Veterinarian <i class="ion-ios-arrow-forward"></i></span></p>--%>
+                <%--                <p class="breadcrumbs mb-2"><span class="mr-2">--%>
+                <%--                    <a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Veterinarian <i class="ion-ios-arrow-forward"></i></span></p>--%>
                 <h1 class="mb-0 bread">유기동물 조회</h1>
             </div>
         </div>
@@ -45,10 +45,12 @@
     <div class="container">
         <div class="row">
             <c:forEach var="abandonedAnimal" items="${abandonedAnimals.content}">
-                <div class="col-md-6 col-lg-3 ftco-animate" onclick="location.href='/abandoned_animal/detail.do?abNumber=${abandonedAnimal.abNumber}'">
+                <div class="col-md-6 col-lg-3 ftco-animate"
+                     onclick="location.href='/abandoned_animal/detail.do?abNumber=${abandonedAnimal.abNumber}'">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
-                            <div class="img align-self-stretch" style="background-image: url(${abandonedAnimal.imgPath});"></div>
+                            <div class="img align-self-stretch"
+                                 style="background-image: url(${abandonedAnimal.imgPath});"></div>
                         </div>
 
                         <div class="text pt-3 px-3 pb-4 text-center">

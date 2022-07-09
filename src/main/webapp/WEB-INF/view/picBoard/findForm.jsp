@@ -9,7 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/animate.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/owl.carousel.min.css">
@@ -43,7 +44,8 @@
             <c:forEach var="find" items="${Finds.content}">
                 <div class="col-md-4 d-flex ftco-animate" id="d-flex-out">
                     <div class="blog-entry align-self-stretch" id="d-flex-in">
-                        <a href="${pageContext.request.contextPath}/find/in.do?faNumber=${find.faNumber}" class="block-20 rounded"
+                        <a href="${pageContext.request.contextPath}/find/in.do?faNumber=${find.faNumber}"
+                           class="block-20 rounded"
                            style="background-image: url('/upload/${find.imgPath}');">
                         </a>
                         <div class="text p-4">
@@ -108,7 +110,8 @@
 <div id="ftco-loader" class="show fullscreen">
     <svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"></circle>
     </svg>
 </div>
 

@@ -40,16 +40,20 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.do"><span class="flaticon-pawprint-1 mr-2"></span>Petmily</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.do"><span
+                class="flaticon-pawprint-1 mr-2"></span>Petmily</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="${pageContext.request.contextPath}/abandoned_animal/list.do" class="nav-link">유기동물 조회</a></li>
-                <li class="nav-item"><a href="${pageContext.request.contextPath}/find/list.do" class="nav-link">반려동물 찾아요</a></li>
-                <li class="nav-item"><a href="${pageContext.request.contextPath}/saw/list.do" class="nav-link">유기동물 봤어요</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/abandoned_animal/list.do"
+                                        class="nav-link">유기동물 조회</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/find/list.do" class="nav-link">반려동물
+                    찾아요</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/saw/list.do" class="nav-link">유기동물
+                    봤어요</a></li>
 
                 <ul class="nav-item"><a href="#" class="nav-link">게시판</a>
                     <li><a href="/board/list.do?kindOfBoard=자유">자유 게시판</a></li>

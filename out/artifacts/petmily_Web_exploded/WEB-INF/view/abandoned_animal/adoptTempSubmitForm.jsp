@@ -1,26 +1,83 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <title>Petmily-Don't buy, Do Adopt</title>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/petsitting-master/css/animate.css">
+    <link rel="stylesheet"
+          href="/petsitting-master/css/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="/petsitting-master/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/petsitting-master/css/magnific-popup.css">
+    <link rel="stylesheet"
+          href="/petsitting-master/css/bootstrap-datepicker.css">
+    <link rel="stylesheet"
+          href="/petsitting-master/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/petsitting-master/css/flaticon.css">
+    <link rel="stylesheet" href="/petsitting-master/css/style.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="../../../petsitting-master/css/animate.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/magnific-popup.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/flaticon.css">
-    <link rel="stylesheet" href="../../../petsitting-master/css/style.css">
-    <link rel="stylesheet" href="../../../css/abandoned_animal.css">
+    <style>
+        .checkboxlabel {
+            display: flex;
+            justify-content: space-between;
+            text-align: justify;
+        }
+
+        .message {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        textarea {
+            width: 82%;
+        }
+
+        .radiobuttons {
+            display: flex;
+        }
+
+        .survey {
+            font-family: 'Raleway', sans-serif;
+            margin-top: 25px;
+        }
+
+        .arr {
+            margin: auto;
+            display: block;
+            width: 100px;
+        }
+
+        h1 {
+            font-weight: 400;
+            font-family: 'Merriweather', serif
+        }
+
+        #description {
+            font-family: 'Merriweather', serif
+        }
+
+        @media ( max-width: 500px) {
+            .checkboxlabel {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <%@ include file="/WEB-INF/view/include/header.jspf" %>
@@ -28,13 +85,12 @@
 <body>
 
 <section class="hero-wrap hero-wrap-2"
-         style="background-image: url('../../../petsitting-master/images/bg_2.jpg');"
+         style="background-image: url('/petsitting-master/images/bg_2.jpg');"
          data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end">
             <div class="col-md-9 ftco-animate pb-5">
-                <p><span>Adopt / Temp <i class="ion-ios-arrow-forward"></i></span></p>
                 <h1 class="mb-0 bread">입양 / 임시보호하기</h1>
             </div>
         </div>
@@ -45,22 +101,24 @@
 <div class="container survey">
     <h1 id="title" class="text-center">입양 / 임시보호 신청서</h1>
 
-    <p id="description1" class="text-center" style="color: red">* 다음
+    <p id="description" class="text-center" style="color: red">* 다음
         양식을 채워주세요</p>
-    <p id="description2" class="text-left">* 임시 보호의 최소 기간은 2개월입니다.</p>
+    <p id="description" class="text-left">* 임시 보호의 최소 기간은 2개월입니다.</p>
 
     <form id="adoptTempSubmitForm"
           action="/abandoned_animal/auth/adopt_temp.do?abNumber=${param.abNumber}"
           method="post">
 
         <div class="form-group">
-            <label id="name-label1">* 가족이 될 동물</label>
-            <input id="animal_name" type="text" name="name" class="form-control" value=${animalName} readonly>
+            <label id="name-label">* 가족이 될 동물</label> <input id="name"
+                                                             type="name" name="name" class="form-control"
+                                                             value=${animalName
+                                                                     } readonly>
         </div>
 
         <div class="form-group">
-            <label id="name-label">* 이름</label>
-            <input id="user_name" type="text" name="name" class="form-control" value=${memberName} readonly>
+            <label id="name-label">* 이름</label> <input id="name" type="name"
+                                                       name="name" class="form-control" value=${memberName } readonly>
         </div>
 
         <br/>
@@ -69,14 +127,15 @@
             <p>1. 선택</p>
             <ul style="list-style: none;">
                 <li class="radio"><input name="adoptOrTemp" value="adopt"
-                                         type="radio" class="userRatings" required="required"><label>입양</label></li>
+                                         type="radio" class="userRatings" required><label>입양</label></li>
                 <li class="radio"><input name="adoptOrTemp" value="temp"
-                                         type="radio" class="userRatings" required="required"><label>임시보호</label></li>
+                                         type="radio" class="userRatings" required><label>임시보호</label></li>
             </ul>
         </div>
 
         <div class="form-group">
-            <label>2. 거주 지역</label> <select name="residence" class="form-control" id="residence" required="required">
+            <label for="exampleFormControlSelect2">2. 거주 지역</label> <select
+                name="residence" class="form-control" id="residence" required>
             <option>서울특별시</option>
             <option>경기도</option>
             <option>인천광역시</option>
@@ -108,9 +167,9 @@
         </div>
 
         <div class="form-group">
-            <label id="job-label">4. 직업</label> <input id="job" type="text"
+            <label id="job-label">4. 직업</label> <input id="job" type="name"
                                                        name="job" class="form-control" placeholder="직업을 입력해주세요."
-                                                       required="required">
+                                                       required>
         </div>
 
         <!-- 후에 설문 구현 -->
@@ -135,7 +194,8 @@
         <br/>
         <br/>
         <div class="arr">
-            <button id="submit" type="submit" class="btn btn-secondary">제출
+            <button id="submit" type="submit" class="btn btn-secondary"
+                    style="float: center">제출
             </button>
         </div>
         <br/>
@@ -230,26 +290,29 @@
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen">
     <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none"
+                stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none"
+                stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
     </svg>
 </div>
 
-<script src="../../../petsitting-master/js/jquery.min.js"></script>
-<script src="../../../petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="../../../petsitting-master/js/popper.min.js"></script>
-<script src="../../../petsitting-master/js/bootstrap.min.js"></script>
-<script src="../../../petsitting-master/js/jquery.easing.1.3.js"></script>
-<script src="../../../petsitting-master/js/jquery.waypoints.min.js"></script>
-<script src="../../../petsitting-master/js/jquery.stellar.min.js"></script>
-<script src="../../../petsitting-master/js/jquery.animateNumber.min.js"></script>
-<script src="../../../petsitting-master/js/bootstrap-datepicker.js"></script>
-<script src="../../../petsitting-master/js/jquery.timepicker.min.js"></script>
-<script src="../../../petsitting-master/js/owl.carousel.min.js"></script>
-<script src="../../../petsitting-master/js/jquery.magnific-popup.min.js"></script>
-<script src="../../../petsitting-master/js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="../../../petsitting-master/js/google-map.js"></script>
-<script src="../../../petsitting-master/js/main.js"></script>
+<script src="/petsitting-master/js/jquery.min.js"></script>
+<script src="/petsitting-master/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/petsitting-master/js/popper.min.js"></script>
+<script src="/petsitting-master/js/bootstrap.min.js"></script>
+<script src="/petsitting-master/js/jquery.easing.1.3.js"></script>
+<script src="/petsitting-master/js/jquery.waypoints.min.js"></script>
+<script src="/petsitting-master/js/jquery.stellar.min.js"></script>
+<script src="/petsitting-master/js/jquery.animateNumber.min.js"></script>
+<script src="/petsitting-master/js/bootstrap-datepicker.js"></script>
+<script src="/petsitting-master/js/jquery.timepicker.min.js"></script>
+<script src="/petsitting-master/js/owl.carousel.min.js"></script>
+<script src="/petsitting-master/js/jquery.magnific-popup.min.js"></script>
+<script src="/petsitting-master/js/scrollax.min.js"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="/petsitting-master/js/google-map.js"></script>
+<script src="/petsitting-master/js/main.js"></script>
 </body>
 </html>

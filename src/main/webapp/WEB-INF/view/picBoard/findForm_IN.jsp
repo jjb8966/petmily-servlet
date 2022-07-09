@@ -8,7 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/animate.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/owl.carousel.min.css">
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="../../../petsitting-master/css/magnific-popup.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/jquery.timepicker.css">
-    <link rel="stylesheet"  href="../../../petsitting-master/css/flaticon.css">
+    <link rel="stylesheet" href="../../../petsitting-master/css/flaticon.css">
     <link rel="stylesheet" href="../../../petsitting-master/css/style.css">
 </head>
 
@@ -93,8 +94,12 @@
                 </div>
                 <div>
                     <c:if test="${authUser.mNumber == findIn.mNumber}">
-                        <button type="button" class="btn btn-primary" onclick="location.href='/find/modify.do?faNumber=${findIn.faNumber}'">수정</button>
-                        <button type="button" class="btn btn-primary" onclick="location.href='/find/delete.do?faNumber=${findIn.faNumber}'">삭제</button>
+                        <button type="button" class="btn btn-primary"
+                                onclick="location.href='/find/modify.do?faNumber=${findIn.faNumber}'">수정
+                        </button>
+                        <button type="button" class="btn btn-primary"
+                                onclick="location.href='/find/delete.do?faNumber=${findIn.faNumber}'">삭제
+                        </button>
                     </c:if>
                 </div>
             </div>
@@ -108,7 +113,8 @@
 <div id="ftco-loader" class="show fullscreen">
     <svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"></circle>
     </svg>
 </div>
 

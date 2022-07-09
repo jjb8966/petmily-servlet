@@ -27,7 +27,7 @@
 
 <%@ include file="/WEB-INF/view/include/header.jspf" %>
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/petsitting-master/images/bg_2.jpg');"
          data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -36,7 +36,7 @@
                 <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i
                         class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i
                         class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Contact</h1>
+                <h1 class="mb-0 bread">마이페이지</h1>
             </div>
         </div>
     </div>

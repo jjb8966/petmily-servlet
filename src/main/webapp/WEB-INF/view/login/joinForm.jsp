@@ -14,7 +14,7 @@
                 <div>
                 	<span class="brand">
                         <a href="${pageContext.request.contextPath}/index.do"
-                            style="text-decoration: none; color: black">
+                           style="text-decoration: none; color: black">
                             <img src="https://i.imgur.com/zpXluzv.png">
                             <small>Petmily</small>
                         </a>
@@ -29,7 +29,8 @@
                             		<img id="changepasseye" src="https://i.imgur.com/d1M6y1W.jpg">
                             	</span>
                                 <p class="random_password"></p>
-                                <input id="passwordCheck" name="confirmPw" type="password" placeholder="비밀번호 확인" required="required">
+                                <input id="passwordCheck" name="confirmPw" type="password" placeholder="비밀번호 확인"
+                                       required="required">
                                 <span class="showpass" onclick="toggle()">
                             		<img id="changepasseyecheck" src="https://i.imgur.com/d1M6y1W.jpg">
                             	</span>
@@ -40,7 +41,7 @@
                             <input type="text" name="gender" placeholder="성별(F or M 입력)" required="required"
                                    oninput="this.value = this.value.replace(/[^FM]/g, '');" maxlength="1">
                             <input type="text" name="email" placeholder="이메일 주소" required="required"
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             <p class="login-text">이메일 형식으로 입력하세요</p>
                             <input type="tel" name="phone" placeholder="연락처" required="required"
                                    pattern="^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$"
