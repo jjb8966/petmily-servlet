@@ -47,8 +47,13 @@ public class JoinHandler implements CommandHandler {
 
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("errors", errors);
-		
-		//joinReq.validate(errors);
+
+		String pw = joinReq.getPw();
+		String confirmPw = joinReq.getConfirmPw();
+
+		if (!isPwEqualToConfirm(pw, confirmPw)) {
+			errors.put("notMatch", Boolean.TRUE);
+		}
 		
 		if (!errors.isEmpty()) {
 			return FORM_VIEW;
@@ -63,4 +68,7 @@ public class JoinHandler implements CommandHandler {
 		}
 	}
 
+	private boolean isPwEqualToConfirm(String pw, String confirmPw) {
+		return pw != null && pw.equals(confirmPw);
+	}
 }
