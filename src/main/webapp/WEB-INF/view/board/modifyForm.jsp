@@ -82,9 +82,17 @@
 							<c:if test="${param.kindOfBoard eq '자유'}"> 
 								<input type="hidden" name="checkPublic" value="Y">
 							</c:if>
-							<c:if test="${param.kindOfBoard eq '문의'}"> 
-								<input type="radio" name="checkPublic" value="Y" checked> 공개
-								<input type="radio" name="checkPublic" value="N"> 비공개
+							<c:if test="${param.kindOfBoard eq '문의'}">
+								<c:choose>
+									<c:when test="${modReq.checkPublic eq 'Y'}">
+										<input type="radio" name="checkPublic" value="Y" checked /> 공개<span>&ensp;</span>
+                                        <input type="radio" name="checkPublic" value="N" /> 비공개<span>&ensp;</span>
+                                     </c:when>
+									 <c:when test="${modReq.checkPublic eq 'N'}">
+										<input type="radio" name="checkPublic" value="Y" /> 공개<span>&ensp;</span>
+										<input type="radio" name="checkPublic" value="N" checked /> 비공개<span>&ensp;</span>
+									</c:when>
+								 </c:choose>
 							</c:if>		
 							<button type="button" class="btn btn-light" data-dismiss="modal"
 								onclick="location.href='/board/list.do?kindOfBoard=${param.kindOfBoard}'">취소</button>
